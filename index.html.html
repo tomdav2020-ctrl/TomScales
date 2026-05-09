@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TomScales | בניית אתרים מקצועית לעסקים קטנים בישראל</title>
-  <meta name="description" content="TomScales בונה אתרים, דפי נחיתה ומודעות סטטיות לעסקים קטנים בישראל. קוד ידני, מחירים קבועים, תשלום רק כשמרוצים.">
+  <title>TomScales | בניית אתרים מקצועית לעסקים קטנים ובינוניים</title>
+  <meta name="description" content="TomScales בונה אתרים ועמודי נחיתה מקצועיים לעסקים קטנים ובינוניים. קוד נקי, עיצוב מותאם, תשלום רק לאחר אישורכם.">
   <meta property="og:title" content="TomScales | בניית אתרים מקצועית">
-  <meta property="og:description" content="אתרים מקוד ידני לעסקים קטנים — החל מ-999 ₪. תשלום רק כשמרוצים.">
+  <meta property="og:description" content="אתרים מקצועיים לעסקים קטנים – ב-999 ₪. תשלום רק לאחר אישורכם.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-/* ═══════════════════════════════════════════
-   @PROPERTY — enables smooth conic-gradient animation
-═══════════════════════════════════════════ */
 @property --ga  { syntax: "<angle>";      initial-value: 0deg;  inherits: false; }
 @property --gao { syntax: "<angle>";      initial-value: 0deg;  inherits: false; }
 @property --gp  { syntax: "<percentage>"; initial-value: 5%;    inherits: false; }
 @property --gs  { syntax: "<color>";      initial-value: rgba(255,255,255,0.9); inherits: false; }
 
-/* ═══════════════════════════════════════════
-   RESET & VARIABLES
-═══════════════════════════════════════════ */
 :root {
   --bg-primary:   #05080F;
   --bg-secondary: #0D1117;
@@ -33,12 +27,10 @@
   --white:        #FFFFFF;
   --gray-text:    #94A3B8;
   --border:       #1E293B;
-
   --font: 'Rubik', 'Segoe UI', sans-serif;
   --radius:    16px;
   --radius-sm: 10px;
   --trans:     all 0.24s ease;
-
   --grid: linear-gradient(to right,  rgba(59,130,246,0.09) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(59,130,246,0.09) 1px, transparent 1px);
   --grid-sz: 32px 32px;
@@ -46,993 +38,327 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-body {
-  background-color: var(--bg-primary);
-  background-image: var(--grid);
-  background-size: var(--grid-sz);
-  color: var(--white);
-  font-family: var(--font);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
+body { background-color: var(--bg-primary); background-image: var(--grid); background-size: var(--grid-sz); color: var(--white); font-family: var(--font); font-size: 18px; font-weight: 500; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 button { font-family: var(--font); }
-
 h1, h2, h3 { font-family: var(--font); font-weight: 900; line-height: 1.1; }
 
-/* ═══════════════════════════════════════════
-   LAYOUT UTILITIES
-═══════════════════════════════════════════ */
 .container { max-width: 1100px; margin-inline: auto; padding-inline: 24px; }
-.container-narrow { max-width: 760px; }
+.container-narrow { max-width: 760px; margin-inline: auto; padding-inline: 24px; }
 .text-center { text-align: center; }
 .text-blue { color: var(--blue-light); }
 
-/* ═══════════════════════════════════════════
-   LOGO (inline SVG + text — no dark bg)
-═══════════════════════════════════════════ */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-
-.logo-icon {
-  width: 38px;
-  height: 29px;
-  flex-shrink: 0;
-}
-
-.logo-sep {
-  width: 1px;
-  height: 26px;
-  background: rgba(255,255,255,0.2);
-  flex-shrink: 0;
-}
-
-.logo-name {
-  font-family: var(--font);
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  line-height: 1;
-}
-
-.logo-tom    { color: var(--white); }
+.nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
+.logo-icon { width: 38px; height: 29px; flex-shrink: 0; }
+.logo-sep { width: 1px; height: 26px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+.logo-name { font-family: var(--font); font-size: 21px; font-weight: 800; letter-spacing: -0.5px; line-height: 1; }
+.logo-tom { color: var(--white); }
 .logo-scales { color: var(--blue-light); }
 
-/* ═══════════════════════════════════════════
-   BUTTONS — 3D FLOATING BASE
-═══════════════════════════════════════════ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  font-family: var(--font);
-  position: relative;
-  transform: translateY(-2px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; white-space: nowrap; font-family: var(--font); position: relative; transform: translateY(-2px); transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
 .btn:active { transform: translateY(1px) !important; }
+.btn-outline { background: transparent; color: var(--blue-light); border: 1.5px solid var(--blue-light); box-shadow: 0 5px 18px rgba(59,130,246,0.2), 0 2px 6px rgba(0,0,0,0.3); }
+.btn-outline:hover { background: rgba(59,130,246,0.08); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(59,130,246,0.3), 0 4px 10px rgba(0,0,0,0.4); }
+.btn-outline:active { box-shadow: 0 2px 8px rgba(59,130,246,0.2), 0 1px 3px rgba(0,0,0,0.3); }
 
-/* ─── OUTLINE BUTTON — 3D ─── */
-.btn-outline {
-  background: transparent;
-  color: var(--blue-light);
-  border: 1.5px solid var(--blue-light);
-  box-shadow:
-    0 5px 18px rgba(59,130,246,0.2),
-    0 2px 6px rgba(0,0,0,0.3);
-}
-.btn-outline:hover {
-  background: rgba(59,130,246,0.08);
-  transform: translateY(-4px);
-  box-shadow:
-    0 10px 28px rgba(59,130,246,0.3),
-    0 4px 10px rgba(0,0,0,0.4);
-}
-.btn-outline:active {
-  box-shadow: 0 2px 8px rgba(59,130,246,0.2), 0 1px 3px rgba(0,0,0,0.3);
-}
-
-/* ─── PRIMARY BUTTON — SHINY ANIMATION + 3D ─── */
 .btn-primary {
-  --sb-h:   rgba(255,255,255,0.75);
-  --sb-dur: 3s;
-  --sb-ease: 700ms cubic-bezier(0.25,1,0.5,1);
-
-  isolation: isolate;
-  overflow: hidden;
-  color: var(--white);
-
+  --sb-h: rgba(255,255,255,0.75); --sb-dur: 3s; --sb-ease: 700ms cubic-bezier(0.25,1,0.5,1);
+  isolation: isolate; overflow: hidden; color: var(--white);
   border: 1.5px solid transparent;
-  background:
-    linear-gradient(135deg, #2563EB 0%, #1D4ED8 60%, #1E3A8A 100%) padding-box,
-    conic-gradient(
-      from calc(var(--ga) - var(--gao)),
-      transparent,
-      var(--sb-h)  var(--gp),
-      var(--gs)    calc(var(--gp) * 2),
-      var(--sb-h)  calc(var(--gp) * 3),
-      transparent  calc(var(--gp) * 4)
-    ) border-box;
-
-  box-shadow:
-    0 5px 20px rgba(37,99,235,0.55),
-    0 2px 8px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.12);
-
-  transition:
-    transform       0.2s ease,
-    box-shadow      0.2s ease,
-    --gao var(--sb-ease),
-    --gp  var(--sb-ease),
-    --gs  var(--sb-ease);
-
-  animation:
-    btn-spin var(--sb-dur) linear infinite,
-    btn-spin calc(var(--sb-dur) / 0.4) linear infinite reverse paused;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 60%, #1E3A8A 100%) padding-box,
+    conic-gradient(from calc(var(--ga) - var(--gao)), transparent, var(--sb-h) var(--gp), var(--gs) calc(var(--gp)*2), var(--sb-h) calc(var(--gp)*3), transparent calc(var(--gp)*4)) border-box;
+  box-shadow: 0 5px 20px rgba(37,99,235,0.55), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, --gao var(--sb-ease), --gp var(--sb-ease), --gs var(--sb-ease);
+  animation: btn-spin var(--sb-dur) linear infinite, btn-spin calc(var(--sb-dur)/0.4) linear infinite reverse paused;
   animation-composition: add;
 }
-
-.btn-primary::before {
-  content: '';
-  pointer-events: none;
-  position: absolute;
-  left: 50%; top: 50%;
-  translate: -50% -50%;
-  z-index: 0;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  background:
-    radial-gradient(circle at 2px 2px, rgba(255,255,255,0.18) 1px, transparent 0)
-    padding-box;
-  background-size: 4px 4px;
-  background-repeat: space;
-  mask-image: conic-gradient(from calc(var(--ga) + 45deg), black, transparent 10% 90%, black);
-  border-radius: inherit;
-  opacity: 0.45;
-  animation:
-    btn-spin var(--sb-dur) linear infinite,
-    btn-spin calc(var(--sb-dur) / 0.4) linear infinite reverse paused;
-  animation-composition: add;
-}
-
-.btn-primary::after {
-  content: '';
-  pointer-events: none;
-  position: absolute;
-  left: 50%; top: 50%;
-  translate: -50% -50%;
-  z-index: 0;
-  width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(-50deg, transparent, rgba(255,255,255,0.22), transparent);
-  mask-image: radial-gradient(circle at bottom, transparent 35%, black);
-  opacity: 0.55;
-  animation:
-    btn-shimmer var(--sb-dur) linear infinite,
-    btn-shimmer calc(var(--sb-dur) / 0.4) linear infinite reverse paused;
-  animation-composition: add;
-}
-
-.btn-primary span {
-  position: relative;
-  z-index: 1;
-}
-
-.btn-primary span::before {
-  content: '';
-  pointer-events: none;
-  position: absolute;
-  left: 50%; top: 50%;
-  translate: -50% -50%;
-  width: calc(100% + 1.5rem);
-  height: calc(100% + 1.5rem);
-  box-shadow: inset 0 -0.5ex 1.5rem 1px rgba(99,160,255,0.5);
-  opacity: 0;
-  transition: opacity var(--sb-ease);
-  animation: btn-breathe calc(var(--sb-dur) * 1.5) linear infinite;
-  border-radius: 4px;
-}
-
-.btn-primary:is(:hover, :focus-visible) {
-  --gp: 22%;
-  --gao: 95deg;
-  --gs: rgba(255,255,255,0.98);
-  transform: translateY(-4px);
-  box-shadow:
-    0 12px 32px rgba(37,99,235,0.7),
-    0 4px 12px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.18);
-}
-.btn-primary:is(:hover, :focus-visible),
-.btn-primary:is(:hover, :focus-visible)::before,
-.btn-primary:is(:hover, :focus-visible)::after {
-  animation-play-state: running;
-}
-.btn-primary:is(:hover, :focus-visible) span::before { opacity: 1; }
-
-.btn-primary:active {
-  box-shadow:
-    0 3px 10px rgba(37,99,235,0.45),
-    0 1px 4px rgba(0,0,0,0.4);
-}
-
+.btn-primary::before { content:''; pointer-events:none; position:absolute; left:50%; top:50%; translate:-50% -50%; z-index:0; width:calc(100% - 4px); height:calc(100% - 4px); background: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.18) 1px, transparent 0) padding-box; background-size:4px 4px; background-repeat:space; mask-image:conic-gradient(from calc(var(--ga)+45deg), black, transparent 10% 90%, black); border-radius:inherit; opacity:0.45; animation:btn-spin var(--sb-dur) linear infinite, btn-spin calc(var(--sb-dur)/0.4) linear infinite reverse paused; animation-composition:add; }
+.btn-primary::after { content:''; pointer-events:none; position:absolute; left:50%; top:50%; translate:-50% -50%; z-index:0; width:100%; aspect-ratio:1; background:linear-gradient(-50deg,transparent,rgba(255,255,255,0.22),transparent); mask-image:radial-gradient(circle at bottom, transparent 35%, black); opacity:0.55; animation:btn-shimmer var(--sb-dur) linear infinite, btn-shimmer calc(var(--sb-dur)/0.4) linear infinite reverse paused; animation-composition:add; }
+.btn-primary span { position:relative; z-index:1; }
+.btn-primary span::before { content:''; pointer-events:none; position:absolute; left:50%; top:50%; translate:-50% -50%; width:calc(100% + 1.5rem); height:calc(100% + 1.5rem); box-shadow:inset 0 -0.5ex 1.5rem 1px rgba(99,160,255,0.5); opacity:0; transition:opacity var(--sb-ease); animation:btn-breathe calc(var(--sb-dur)*1.5) linear infinite; border-radius:4px; }
+.btn-primary:is(:hover,:focus-visible) { --gp:22%; --gao:95deg; --gs:rgba(255,255,255,0.98); transform:translateY(-4px); box-shadow:0 12px 32px rgba(37,99,235,0.7),0 4px 12px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.18); }
+.btn-primary:is(:hover,:focus-visible),.btn-primary:is(:hover,:focus-visible)::before,.btn-primary:is(:hover,:focus-visible)::after { animation-play-state:running; }
+.btn-primary:is(:hover,:focus-visible) span::before { opacity:1; }
+.btn-primary:active { box-shadow:0 3px 10px rgba(37,99,235,0.45),0 1px 4px rgba(0,0,0,0.4); }
 @keyframes btn-spin    { to { --ga: 360deg; } }
 @keyframes btn-shimmer { to { rotate: 360deg; } }
-@keyframes btn-breathe { from, to { scale: 1; } 50% { scale: 1.15; } }
+@keyframes btn-breathe { from,to { scale:1; } 50% { scale:1.15; } }
+.btn-hero-pulse { animation: btn-spin 3s linear infinite, ctaPulse 3s ease-in-out infinite; }
+@keyframes ctaPulse { 0%,100% { box-shadow:0 5px 20px rgba(37,99,235,0.55),0 0 0 0 rgba(37,99,235,0.4); } 50% { box-shadow:0 5px 20px rgba(37,99,235,0.55),0 0 0 12px rgba(37,99,235,0); } }
 
-.btn-wa {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 26px;
-  background: #25D366;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: var(--font);
-  margin-bottom: 32px;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 18px rgba(37,211,102,0.4), 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+.btn-wa { display:inline-flex; align-items:center; gap:10px; padding:13px 26px; background:#25D366; color:#fff; border-radius:8px; font-size:15px; font-weight:600; font-family:var(--font); margin-bottom:32px; transform:translateY(-2px); box-shadow:0 5px 18px rgba(37,211,102,0.4),0 2px 6px rgba(0,0,0,0.3); transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease; }
+.btn-wa:hover { background:#1fb855; transform:translateY(-4px); box-shadow:0 10px 26px rgba(37,211,102,0.5),0 4px 10px rgba(0,0,0,0.4); }
+.btn-wa:active { transform:translateY(1px); box-shadow:0 2px 8px rgba(37,211,102,0.3); }
+.btn-lg  { padding:15px 34px; font-size:16px; }
+.btn-xl  { padding:18px 52px; font-size:18px; }
+.btn-full { width:100%; }
+
+.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.55s ease,transform 0.55s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+.section { padding:72px 0; }
+.section-alt { background-color:var(--bg-secondary); background-image:var(--grid); background-size:var(--grid-sz); }
+.section-label { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--blue-light); margin-bottom:12px; }
+.section-title { font-size:clamp(24px,3.5vw,42px); font-weight:900; margin-bottom:48px; }
+
+#navbar { position:fixed; inset-inline:0; top:0; z-index:900; padding-inline:24px; transition:background 0.3s,backdrop-filter 0.3s,border-color 0.3s; border-bottom:1px solid transparent; }
+#navbar.scrolled { background:rgba(5,8,15,0.88); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-color:var(--border); }
+.nav-inner { max-width:1100px; margin-inline:auto; height:68px; display:flex; align-items:center; gap:40px; }
+.nav-links { display:flex; gap:28px; margin-inline-start:auto; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--gray-text); transition:color 0.2s; }
+.nav-links a:hover { color:var(--white); }
+.nav-cta { padding:9px 22px; font-size:14px; flex-shrink:0; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; margin-inline-start:auto; }
+.hamburger span { display:block; width:24px; height:2px; background:var(--white); border-radius:2px; transition:var(--trans); }
+
+.mobile-overlay { position:fixed; inset:0; z-index:1000; background-color:var(--bg-primary); background-image:var(--grid); background-size:var(--grid-sz); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:36px; opacity:0; pointer-events:none; transition:opacity 0.3s ease; }
+.mobile-overlay.open { opacity:1; pointer-events:all; }
+.mobile-close { position:absolute; top:22px; inset-inline-start:24px; background:none; border:none; color:var(--gray-text); font-size:22px; cursor:pointer; transition:color 0.2s; }
+.mobile-close:hover { color:var(--white); }
+.mobile-nav ul { display:flex; flex-direction:column; align-items:center; gap:26px; }
+.mobile-nav a { font-family:var(--font); font-size:26px; font-weight:800; color:var(--white); transition:color 0.2s; }
+.mobile-nav a:hover { color:var(--blue-light); }
+.mobile-cta { margin-top:8px; }
+
+.hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; padding-top:68px; }
+#siteSparkles { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:5; mix-blend-mode:screen; opacity:0.8; }
+.hero-glow { position:absolute; inset:0; background:radial-gradient(ellipse 85% 65% at 50% -5%,rgba(37,99,235,0.32) 0%,transparent 62%); pointer-events:none; z-index:0; }
+.hero-sparkles { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1; display:block; }
+.hero-body { position:relative; z-index:2; padding-block:52px; text-align:center; }
+.hero-headline { font-size:clamp(38px,6.8vw,82px); font-weight:900; letter-spacing:-2px; line-height:1.07; margin-bottom:22px; }
+.hero-sub { font-size:clamp(16px,1.8vw,19px); color:var(--gray-text); line-height:1.75; max-width:680px; margin-inline:auto; margin-bottom:36px; font-weight:400; }
+.hero-actions { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:32px; }
+.check { color:var(--blue-light); font-weight:700; }
+.trust-bar { display:flex; gap:28px; flex-wrap:wrap; justify-content:center; font-size:13px; color:var(--gray-text); font-weight:500; }
+.scroll-cue { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:2; }
+.scroll-cue-arrow { width:16px; height:16px; border-inline-end:2px solid var(--blue-light); border-bottom:2px solid var(--blue-light); transform:rotate(45deg); animation:bounce 1.6s ease infinite; opacity:0.5; }
+@keyframes bounce { 0%,100% { transform:rotate(45deg) translateY(0); } 50% { transform:rotate(45deg) translateY(7px); } }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(37,99,235,0.15); border:1px solid rgba(59,130,246,0.35); border-radius:999px; padding:7px 18px; font-size:13px; font-weight:600; color:var(--gray-text); margin-bottom:24px; animation:fadeUp 0.5s ease 0.10s both; }
+.hero-badge .badge-stars { color:#FBBF24; letter-spacing:1px; font-size:12px; }
+.hero-badge strong { color:var(--white); }
+.trust-line { animation:fadeUp 0.6s ease 0.60s both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
+.trust-section { background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:52px 0 44px; }
+.trust-items { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
+.trust-item { display:flex; align-items:center; gap:14px; }
+.trust-item-icon { width:64px; height:64px; flex-shrink:0; background:rgba(37,99,235,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:32px; }
+.trust-item-body { line-height:1.25; }
+.trust-item-body strong { display:block; font-size:15px; font-weight:700; color:var(--white); margin-bottom:2px; }
+.trust-item-body span { font-size:13px; color:var(--gray-text); font-weight:400; }
+
+.cards-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.service-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:36px 28px; transition:transform 0.24s ease,box-shadow 0.24s ease,border-color 0.24s ease; }
+.service-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(37,99,235,0.24); border-color:rgba(59,130,246,0.4); }
+.svc-icon { width:42px; height:42px; color:var(--blue-light); margin-bottom:20px; }
+.service-card h3 { font-size:19px; font-weight:800; margin-bottom:12px; }
+.service-card p  { font-size:14px; color:var(--gray-text); line-height:1.7; font-weight:400; }
+
+.ps-label    { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--blue-light); margin-bottom:12px; }
+.ps-headline { font-size:clamp(24px,3.5vw,40px); font-weight:900; margin-bottom:10px; line-height:1.2; }
+.ps-sub      { font-size:16px; color:var(--gray-text); margin-bottom:48px; font-weight:400; max-width:560px; }
+.ps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.ps-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:28px 24px; transition:transform 0.24s ease,box-shadow 0.24s ease; }
+.ps-card:hover { transform:translateY(-4px); box-shadow:0 4px 24px rgba(0,0,0,0.20); }
+.ps-card-icon { font-size:30px; margin-bottom:14px; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; }
+.ps-card.problem .ps-card-icon,.ps-card.solution .ps-card-icon { background:transparent; }
+.ps-card h3 { font-size:19px; font-weight:800; margin-bottom:10px; }
+.ps-card p  { font-size:16px; color:var(--gray-text); line-height:1.7; font-weight:400; }
+.ps-divider { display:flex; align-items:center; justify-content:center; gap:20px; margin:40px 0; }
+.ps-divider::before,.ps-divider::after { content:''; flex:1; height:1px; background:var(--border); }
+.ps-divider-label { padding:8px 24px; background:var(--blue-main); border-radius:999px; font-size:13px; font-weight:700; white-space:nowrap; }
+
+.stats-strip { background:linear-gradient(135deg,var(--blue-dark) 0%,#0F172A 100%); border-top:1px solid rgba(59,130,246,0.3); border-bottom:1px solid rgba(59,130,246,0.3); padding:60px 0; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; text-align:center; }
+.stat-item  { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.stat-number { font-size:clamp(36px,5vw,56px); font-weight:900; color:var(--white); line-height:1; }
+.stat-suffix { color:var(--blue-light); }
+.stat-label  { font-size:14px; color:var(--gray-text); font-weight:500; }
+
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; margin-bottom:48px; }
+.pricing-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:36px 28px; display:flex; flex-direction:column; position:relative; transition:transform 0.24s ease,box-shadow 0.24s ease; }
+.pricing-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(37,99,235,0.2); }
+.pricing-featured { background:linear-gradient(160deg,rgba(37,99,235,0.16) 0%,var(--bg-card) 55%); border-color:var(--blue-main); transform:scale(1.03); }
+.pricing-featured:hover { transform:scale(1.03) translateY(-5px); }
+.feat-badge { position:absolute; top:-14px; right:50%; transform:translateX(50%); background:var(--blue-main); color:#fff; font-size:12px; font-weight:700; padding:4px 18px; border-radius:20px; letter-spacing:0.5px; }
+.pricing-card h3 { font-size:20px; font-weight:800; margin-bottom:8px; }
+.pkg-desc { font-size:13px; color:var(--gray-text); margin-bottom:20px; line-height:1.5; font-weight:400; }
+.pkg-price { display:flex; align-items:baseline; gap:6px; direction:ltr; margin-bottom:24px; }
+.price-num { font-family:var(--font); font-size:52px; font-weight:900; line-height:1; }
+.price-cur { font-size:22px; font-weight:700; color:var(--gray-text); }
+.feat-list { display:flex; flex-direction:column; gap:10px; margin-bottom:18px; flex:1; }
+.feat-list li { font-size:14px; font-weight:500; display:flex; align-items:center; gap:10px; }
+.feat-list li::before { content:''; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; font-size:11px; flex-shrink:0; }
+.feat-list li.yes { color:var(--white); }
+.feat-list li.yes::before { content:'✓'; background:rgba(59,130,246,0.2); color:var(--blue-light); }
+.feat-list li.no  { color:var(--gray-text); opacity:0.5; }
+.feat-list li.no::before  { content:'✗'; background:rgba(148,163,184,0.1); color:var(--gray-text); }
+.pkg-note { font-size:12px; color:var(--gray-text); opacity:0.6; margin-bottom:18px; font-weight:400; }
+.pricing-footer-note { text-align:center; font-size:15px; color:var(--gray-text); line-height:1.8; font-weight:400; }
+.pricing-footer-note a { color:var(--blue-light); text-decoration:underline; text-underline-offset:3px; }
+
+.usp-stack { display:flex; flex-direction:column; gap:16px; margin-bottom:56px; }
+.usp-row { display:flex; align-items:flex-start; gap:28px; padding:32px 36px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); transition:border-color 0.24s ease,background 0.24s ease; }
+.usp-row:hover { border-color:rgba(37,99,235,0.42); background:linear-gradient(100deg,rgba(37,99,235,0.07),transparent 60%); }
+.usp-emoji { font-size:30px; width:60px; height:60px; display:flex; align-items:center; justify-content:center; background:rgba(37,99,235,0.1); border-radius:12px; flex-shrink:0; }
+.usp-body h3 { font-size:20px; font-weight:800; margin-bottom:8px; }
+.usp-body p  { font-size:14px; color:var(--gray-text); line-height:1.7; font-weight:400; }
+.icon-row { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; }
+.icon-tile { display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+.icon-tile span { font-size:38px; width:80px; height:80px; background:rgba(37,99,235,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; padding-top:8px; }
+.icon-tile p { font-size:13px; color:var(--gray-text); font-weight:600; }
+
+.process-row { display:flex; align-items:flex-start; }
+.process-step { flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; padding-inline:14px; }
+.step-num { width:50px; height:50px; border-radius:50%; background:var(--blue-main); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:20px; box-shadow:0 0 0 8px rgba(37,99,235,0.13); flex-shrink:0; }
+.process-line { flex:0 0 50px; height:2px; background:linear-gradient(to left,var(--border),var(--blue-main)); margin-top:25px; flex-shrink:0; }
+.process-step h3 { font-size:16px; font-weight:800; margin-bottom:8px; }
+.process-step p  { font-size:13px; color:var(--gray-text); line-height:1.65; font-weight:400; }
+
+.testi-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:32px 26px; position:relative; transition:transform 0.24s ease,box-shadow 0.24s ease,border-color 0.24s ease; }
+.testi-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(37,99,235,0.2); border-color:rgba(59,130,246,0.32); }
+.quote-glyph { position:absolute; top:10px; inset-inline-start:20px; font-size:70px; color:var(--blue-main); opacity:0.2; font-family:Georgia,serif; line-height:1; pointer-events:none; }
+.stars { font-size:14px; color:#FBBF24; margin-bottom:14px; letter-spacing:2px; }
+.testi-text { font-size:14px; color:var(--gray-text); line-height:1.75; margin-bottom:22px; font-style:italic; font-weight:400; }
+.testi-author { display:flex; align-items:center; gap:11px; }
+.avatar { width:38px; height:38px; border-radius:50%; background:var(--blue-main); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; }
+.testi-author strong { display:block; font-size:14px; font-weight:700; }
+.testi-author span   { font-size:12px; color:var(--gray-text); font-weight:400; }
+
+.faq-list { display:flex; flex-direction:column; gap:16px; }
+.faq-item { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; transition:border-color 0.25s; }
+.faq-item.open { border-color:rgba(59,130,246,0.38); }
+.faq-q { width:100%; background:none; border:none; padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:14px; cursor:pointer; text-align:start; font-size:15px; font-weight:600; color:var(--white); transition:color 0.2s; }
+.faq-q:hover { color:var(--blue-light); }
+.faq-plus { font-size:22px; color:var(--blue-light); font-weight:300; flex-shrink:0; transition:transform 0.3s ease; line-height:1; }
+.faq-item.open .faq-plus { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.36s ease; }
+.faq-a p { padding:0 22px 20px; font-size:14px; color:var(--gray-text); line-height:1.75; font-weight:400; }
+.faq-item.open .faq-a { max-height:400px; }
+
+.cta-section { position:relative; overflow:hidden; }
+.cta-glow { position:absolute; inset:0; background:radial-gradient(ellipse 72% 78% at 50% 50%,rgba(37,99,235,0.22) 0%,transparent 70%); pointer-events:none; }
+.cta-headline { font-size:clamp(28px,5vw,58px); font-weight:900; line-height:1.12; margin-bottom:18px; }
+.cta-sub      { font-size:17px; color:var(--gray-text); margin-bottom:36px; font-weight:400; }
+.cta-microcopy { font-size:13px; color:var(--gray-text); margin-top:14px; opacity:0.7; }
+.cta-checks { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:26px; font-size:14px; color:var(--gray-text); font-weight:500; }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1.45fr; gap:64px; align-items:start; }
+.contact-intro { font-size:16px; color:var(--gray-text); margin-bottom:26px; line-height:1.7; font-weight:400; }
+.contact-details { display:flex; flex-direction:column; gap:18px; }
+.cd-row { display:flex; flex-direction:column; gap:4px; }
+.cd-label { font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--blue-light); font-weight:600; }
+.cd-row a,.cd-row span { font-size:14px; color:var(--gray-text); font-weight:400; }
+.cd-row a:hover { color:var(--white); }
+.contact-form-wrap { position:relative; }
+form { display:flex; flex-direction:column; gap:18px; }
+.fg  { display:flex; flex-direction:column; gap:7px; }
+.fg label { font-size:14px; font-weight:600; color:var(--gray-text); }
+.fg input,.fg textarea,.select-wrap select { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:13px 15px; color:var(--white); font-family:var(--font); font-size:15px; font-weight:400; outline:none; direction:rtl; width:100%; transition:border-color 0.22s,box-shadow 0.22s; }
+.fg input::placeholder,.fg textarea::placeholder { color:rgba(148,163,184,0.35); }
+.fg input:focus,.fg textarea:focus,.select-wrap select:focus { border-color:var(--blue-main); box-shadow:0 0 0 3px rgba(37,99,235,0.18); }
+.fg input.error,.fg textarea.error,.select-wrap.error select { border-color:#ef4444; }
+.select-wrap { position:relative; }
+.select-wrap::after { content:'▾'; position:absolute; top:50%; inset-inline-end:15px; transform:translateY(-50%); color:var(--gray-text); pointer-events:none; font-size:13px; }
+.select-wrap select { appearance:none; -webkit-appearance:none; cursor:pointer; }
+.fg textarea { resize:vertical; min-height:110px; }
+.form-success { display:none; text-align:center; padding:56px 28px; background:var(--bg-card); border:1px solid rgba(59,130,246,0.32); border-radius:var(--radius); }
+.form-success.show { display:block; }
+.success-check { width:60px; height:60px; background:rgba(37,99,235,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--blue-light); margin:0 auto 18px; }
+.form-success h3 { font-size:22px; margin-bottom:8px; }
+.form-success p  { color:var(--gray-text); font-weight:400; }
+
+.footer { background-color:#020509; background-image:var(--grid); background-size:var(--grid-sz); border-top:1px solid var(--border); padding:52px 0 0; }
+.footer-cols { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:48px; margin-bottom:44px; }
+.footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.footer-brand p { font-size:14px; color:var(--gray-text); font-weight:400; }
+.footer-links { display:flex; flex-direction:column; gap:12px; }
+.footer-links a { font-size:14px; color:var(--gray-text); font-weight:500; transition:color 0.2s; }
+.footer-links a:hover { color:var(--white); }
+.footer-social { display:flex; gap:10px; }
+.social-icon { width:38px; height:38px; border-radius:8px; background:var(--bg-card); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--gray-text); transition:var(--trans); }
+.social-icon:hover { color:var(--white); border-color:var(--blue-main); background:rgba(37,99,235,0.14); }
+.footer-bar { border-top:1px solid var(--border); padding:18px 0; text-align:center; }
+.footer-bar p { font-size:13px; color:var(--gray-text); opacity:0.5; font-weight:400; }
+
+.cards-3 .reveal:nth-child(2)      { transition-delay:90ms; }
+.cards-3 .reveal:nth-child(3)      { transition-delay:180ms; }
+.pricing-grid .reveal:nth-child(2) { transition-delay:90ms; }
+.pricing-grid .reveal:nth-child(3) { transition-delay:180ms; }
+.ps-grid .reveal:nth-child(2)      { transition-delay:90ms; }
+.ps-grid .reveal:nth-child(3)      { transition-delay:180ms; }
+.stats-grid .stat-item:nth-child(2) { transition-delay:80ms; }
+.stats-grid .stat-item:nth-child(3) { transition-delay:160ms; }
+.stats-grid .stat-item:nth-child(4) { transition-delay:240ms; }
+
+[data-glow] {
+  position:relative;
+  --glow-hue: calc(215 + (var(--xp,0) * 30));
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.45), 0 0 10px 1px rgba(37,99,235,0.30), 0 0 28px 0px rgba(37,99,235,0.12);
 }
-.btn-wa:hover {
-  background: #1fb855;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(37,211,102,0.5), 0 4px 10px rgba(0,0,0,0.4);
+[data-glow]:hover {
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.70), 0 0 14px 2px rgba(37,99,235,0.50), 0 0 36px 0px rgba(37,99,235,0.22), 0 12px 36px rgba(37,99,235,0.24);
 }
-.btn-wa:active { transform: translateY(1px); box-shadow: 0 2px 8px rgba(37,211,102,0.3); }
-
-.btn-lg  { padding: 15px 34px; font-size: 16px; }
-.btn-xl  { padding: 18px 52px; font-size: 18px; }
-.btn-full { width: 100%; }
-
-/* ═══════════════════════════════════════════
-   REVEAL ANIMATION
-═══════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+[data-glow]::before,[data-glow]::after {
+  pointer-events:none; content:""; position:absolute; inset:-1.5px; border:1.5px solid transparent; border-radius:inherit;
+  mask-image:linear-gradient(#fff 0 0),linear-gradient(#fff 0 0);
+  mask-clip:padding-box,border-box; mask-composite:exclude;
+  -webkit-mask-image:linear-gradient(#fff 0 0),linear-gradient(#fff 0 0);
+  -webkit-mask-clip:padding-box,border-box; -webkit-mask-composite:destination-out;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ═══════════════════════════════════════════
-   SECTION SHARED
-═══════════════════════════════════════════ */
-.section { padding: 72px 0; }
-.section-alt {
-  background-color: var(--bg-secondary);
-  background-image: var(--grid);
-  background-size: var(--grid-sz);
-}
-
-.section-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--blue-light);
-  margin-bottom: 12px;
-}
-.section-title {
-  font-size: clamp(24px, 3.5vw, 42px);
-  font-weight: 900;
-  margin-bottom: 48px;
-}
-
-/* ═══════════════════════════════════════════
-   NAVIGATION
-═══════════════════════════════════════════ */
-#navbar {
-  position: fixed;
-  inset-inline: 0;
-  top: 0;
-  z-index: 900;
-  padding-inline: 24px;
-  transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
-  border-bottom: 1px solid transparent;
-}
-#navbar.scrolled {
-  background: rgba(5,8,15,0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-color: var(--border);
-}
-
-.nav-inner {
-  max-width: 1100px;
-  margin-inline: auto;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-links { display: flex; gap: 28px; margin-inline-start: auto; }
-.nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-text); transition: color 0.2s; }
-.nav-links a:hover { color: var(--white); }
-
-.nav-cta { padding: 9px 22px; font-size: 14px; flex-shrink: 0; }
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  margin-inline-start: auto;
-}
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: var(--trans);
-}
-
-/* ═══════════════════════════════════════════
-   MOBILE OVERLAY
-═══════════════════════════════════════════ */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background-color: var(--bg-primary);
-  background-image: var(--grid);
-  background-size: var(--grid-sz);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.mobile-overlay.open { opacity: 1; pointer-events: all; }
-
-.mobile-close {
-  position: absolute;
-  top: 22px;
-  inset-inline-start: 24px;
-  background: none;
-  border: none;
-  color: var(--gray-text);
-  font-size: 22px;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.mobile-close:hover { color: var(--white); }
-
-.mobile-nav ul { display: flex; flex-direction: column; align-items: center; gap: 26px; }
-.mobile-nav a { font-family: var(--font); font-size: 26px; font-weight: 800; color: var(--white); transition: color 0.2s; }
-.mobile-nav a:hover { color: var(--blue-light); }
-.mobile-cta { margin-top: 8px; }
-
-/* ═══════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════ */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding-top: 68px;
-}
-
-/* ═══════════════════════════════════════════
-   SITE-WIDE SPARKLES
-═══════════════════════════════════════════ */
-#siteSparkles {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
-  mix-blend-mode: screen;
-  opacity: 0.8;
-}
-
-.hero-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 85% 65% at 50% -5%, rgba(37,99,235,0.32) 0%, transparent 62%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-sparkles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  display: block;
-}
-
-.hero-body {
-  position: relative;
-  z-index: 2;
-  padding-block: 52px;
-  text-align: center;
-}
-
-.hero-headline {
-  font-size: clamp(38px, 6.8vw, 82px);
-  font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1.07;
-  margin-bottom: 22px;
-}
-
-.hero-sub {
-  font-size: clamp(16px, 1.8vw, 19px);
-  color: var(--gray-text);
-  line-height: 1.75;
-  max-width: 680px;
-  margin-inline: auto;
-  margin-bottom: 36px;
-  font-weight: 400;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 32px;
+[data-glow]::before {
+  background-image:radial-gradient(90px 90px at calc(var(--x,-9999)*1px) calc(var(--y,-9999)*1px), hsl(var(--glow-hue) 100% 60%/1), transparent 100%);
 }
 
-.check { color: var(--blue-light); font-weight: 700; }
-
-.trust-bar {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 13px;
-  color: var(--gray-text);
-  font-weight: 500;
+@media (max-width:1024px) {
+  .cards-3,.pricing-grid,.ps-grid { grid-template-columns:1fr 1fr; }
+  .trust-items { grid-template-columns:1fr 1fr; }
+  .stats-grid  { grid-template-columns:repeat(2,1fr); gap:24px; }
+  .pricing-featured { transform:none; }
+  .pricing-featured:hover { transform:translateY(-5px); }
+  .process-row  { flex-wrap:wrap; gap:28px; justify-content:center; }
+  .process-line { display:none; }
+  .process-step { flex:0 0 calc(50% - 14px); }
 }
-
-.scroll-cue { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; }
-.scroll-cue-arrow {
-  width: 16px;
-  height: 16px;
-  border-inline-end: 2px solid var(--blue-light);
-  border-bottom: 2px solid var(--blue-light);
-  transform: rotate(45deg);
-  animation: bounce 1.6s ease infinite;
-  opacity: 0.5;
+@media (max-width:768px) {
+  .section { padding:56px 0; }
+  .section-title { margin-bottom:32px; }
+  .nav-links,.nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .cards-3,.pricing-grid,.ps-grid { grid-template-columns:1fr; }
+  .trust-items { grid-template-columns:1fr 1fr; gap:16px; }
+  .stats-grid  { grid-template-columns:repeat(2,1fr); gap:20px; }
+  .cards-3 .reveal:nth-child(2),.cards-3 .reveal:nth-child(3),.pricing-grid .reveal:nth-child(2),.pricing-grid .reveal:nth-child(3) { transition-delay:0ms; }
+  .hero-headline { font-size:36px; letter-spacing:-1.2px; }
+  .hero-actions  { flex-direction:column; align-items:stretch; }
+  .trust-bar     { flex-direction:column; gap:8px; }
+  .br-desktop    { display:none; }
+  .process-step { flex:0 0 100%; }
+  .usp-row      { flex-direction:column; gap:16px; padding:24px; }
+  .icon-row     { gap:20px; }
+  .cta-checks   { flex-direction:column; gap:8px; align-items:center; }
+  .contact-grid { grid-template-columns:1fr; gap:44px; }
+  .footer-cols  { grid-template-columns:1fr; gap:28px; }
 }
-@keyframes bounce {
-  0%,100% { transform: rotate(45deg) translateY(0); }
-  50%      { transform: rotate(45deg) translateY(7px); }
-}
-
-/* ═══════════════════════════════════════════
-   SERVICE CARDS
-═══════════════════════════════════════════ */
-.cards-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-inline-end: 3px solid var(--blue-main);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
-}
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 36px rgba(37,99,235,0.24);
-  border-inline-end-color: var(--blue-light);
-}
-
-.svc-icon { width: 42px; height: 42px; color: var(--blue-light); margin-bottom: 20px; }
-.service-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 12px; }
-.service-card p  { font-size: 14px; color: var(--gray-text); line-height: 1.7; font-weight: 400; }
-
-/* ═══════════════════════════════════════════
-   PRICING
-═══════════════════════════════════════════ */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: start;
-  margin-bottom: 48px;
-}
-
-.pricing-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
-}
-.pricing-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(37,99,235,0.2); }
-
-.pricing-featured {
-  background: linear-gradient(160deg, rgba(37,99,235,0.16) 0%, var(--bg-card) 55%);
-  border-color: var(--blue-main);
-  transform: scale(1.03);
-}
-.pricing-featured:hover { transform: scale(1.03) translateY(-5px); }
-
-.feat-badge {
-  position: absolute;
-  top: -14px;
-  right: 50%;
-  transform: translateX(50%);
-  background: var(--blue-main);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 18px;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-}
-
-.pricing-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-.pkg-desc { font-size: 13px; color: var(--gray-text); margin-bottom: 20px; line-height: 1.5; font-weight: 400; }
-
-.pkg-price { display: flex; align-items: baseline; gap: 6px; direction: ltr; margin-bottom: 24px; }
-.price-num { font-family: var(--font); font-size: 52px; font-weight: 900; line-height: 1; }
-.price-cur { font-size: 22px; font-weight: 700; color: var(--gray-text); }
-
-.feat-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; flex: 1; }
-.feat-list li { font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
-.feat-list li::before {
-  content: '';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  font-size: 11px;
-  flex-shrink: 0;
-}
-.feat-list li.yes { color: var(--white); }
-.feat-list li.yes::before { content: '✓'; background: rgba(59,130,246,0.2); color: var(--blue-light); }
-.feat-list li.no  { color: var(--gray-text); opacity: 0.5; }
-.feat-list li.no::before  { content: '✗'; background: rgba(148,163,184,0.1); color: var(--gray-text); }
-
-.pkg-note { font-size: 12px; color: var(--gray-text); opacity: 0.6; margin-bottom: 18px; font-weight: 400; }
-
-.pricing-footer-note { text-align: center; font-size: 15px; color: var(--gray-text); line-height: 1.8; font-weight: 400; }
-.pricing-footer-note a { color: var(--blue-light); text-decoration: underline; text-underline-offset: 3px; }
-
-/* ═══════════════════════════════════════════
-   USP / WHY
-═══════════════════════════════════════════ */
-.usp-stack { display: flex; flex-direction: column; gap: 3px; margin-bottom: 56px; }
-
-.usp-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  padding: 32px 36px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  transition: border-color 0.24s ease, background 0.24s ease;
-}
-.usp-row:hover {
-  border-color: rgba(37,99,235,0.42);
-  background: linear-gradient(100deg, rgba(37,99,235,0.07), transparent 60%);
-}
-
-.usp-emoji {
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(37,99,235,0.1);
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-.usp-body h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-.usp-body p  { font-size: 14px; color: var(--gray-text); line-height: 1.7; font-weight: 400; }
-
-.icon-row { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
-.icon-tile { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
-.icon-tile span {
-  font-size: 26px;
-  width: 56px;
-  height: 56px;
-  background: rgba(37,99,235,0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-tile p { font-size: 13px; color: var(--gray-text); font-weight: 600; }
-
-/* ═══════════════════════════════════════════
-   PROCESS
-═══════════════════════════════════════════ */
-.process-row { display: flex; align-items: flex-start; }
-
-.process-step {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-inline: 14px;
-}
-
-.step-num {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--blue-main);
-  color: #fff;
-  font-size: 19px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 0 0 8px rgba(37,99,235,0.13);
-  flex-shrink: 0;
-}
-
-.process-line {
-  flex: 0 0 50px;
-  height: 2px;
-  background: linear-gradient(to left, var(--border), var(--blue-main));
-  margin-top: 25px;
-  flex-shrink: 0;
-}
-
-.process-step h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
-.process-step p  { font-size: 13px; color: var(--gray-text); line-height: 1.65; font-weight: 400; }
-
-/* ═══════════════════════════════════════════
-   TESTIMONIALS
-═══════════════════════════════════════════ */
-.testi-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 26px;
-  position: relative;
-  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
-}
-.testi-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 36px rgba(37,99,235,0.2);
-  border-color: rgba(59,130,246,0.32);
-}
-
-.quote-glyph {
-  position: absolute;
-  top: 10px;
-  inset-inline-start: 20px;
-  font-size: 70px;
-  color: var(--blue-main);
-  opacity: 0.2;
-  font-family: Georgia, serif;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.stars { font-size: 14px; color: #FBBF24; margin-bottom: 14px; letter-spacing: 2px; }
-.testi-text { font-size: 14px; color: var(--gray-text); line-height: 1.75; margin-bottom: 22px; font-style: italic; font-weight: 400; }
-.testi-author { display: flex; align-items: center; gap: 11px; }
-.avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--blue-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 15px;
-  flex-shrink: 0;
-}
-.testi-author strong { display: block; font-size: 14px; font-weight: 700; }
-.testi-author span   { font-size: 12px; color: var(--gray-text); font-weight: 400; }
-
-/* ═══════════════════════════════════════════
-   FAQ
-═══════════════════════════════════════════ */
-.faq-list { display: flex; flex-direction: column; gap: 8px; }
-
-.faq-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  transition: border-color 0.25s;
-}
-.faq-item.open { border-color: rgba(59,130,246,0.38); }
-
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 20px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  cursor: pointer;
-  text-align: start;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--white);
-  transition: color 0.2s;
-}
-.faq-q:hover { color: var(--blue-light); }
-
-.faq-plus {
-  font-size: 22px;
-  color: var(--blue-light);
-  font-weight: 300;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-  line-height: 1;
-}
-.faq-item.open .faq-plus { transform: rotate(45deg); }
-
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.36s ease; }
-.faq-a p { padding: 0 22px 20px; font-size: 14px; color: var(--gray-text); line-height: 1.75; font-weight: 400; }
-.faq-item.open .faq-a { max-height: 400px; }
-
-/* ═══════════════════════════════════════════
-   FINAL CTA
-═══════════════════════════════════════════ */
-.cta-section { position: relative; overflow: hidden; }
-.cta-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 72% 78% at 50% 50%, rgba(37,99,235,0.22) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-headline { font-size: clamp(28px, 5vw, 58px); font-weight: 900; line-height: 1.12; margin-bottom: 18px; }
-.cta-sub      { font-size: 17px; color: var(--gray-text); margin-bottom: 36px; font-weight: 400; }
-.cta-checks {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 26px;
-  font-size: 14px;
-  color: var(--gray-text);
-  font-weight: 500;
-}
-
-/* ═══════════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════════ */
-.contact-grid { display: grid; grid-template-columns: 1fr 1.45fr; gap: 64px; align-items: start; }
-.contact-intro { font-size: 16px; color: var(--gray-text); margin-bottom: 26px; line-height: 1.7; font-weight: 400; }
-
-.contact-details { display: flex; flex-direction: column; gap: 18px; }
-.cd-row { display: flex; flex-direction: column; gap: 4px; }
-.cd-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue-light); font-weight: 600; }
-.cd-row a, .cd-row span { font-size: 14px; color: var(--gray-text); font-weight: 400; }
-.cd-row a:hover { color: var(--white); }
-
-.contact-form-wrap { position: relative; }
-form { display: flex; flex-direction: column; gap: 18px; }
-.fg  { display: flex; flex-direction: column; gap: 7px; }
-.fg label { font-size: 14px; font-weight: 600; color: var(--gray-text); }
-
-.fg input,
-.fg textarea,
-.select-wrap select {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 13px 15px;
-  color: var(--white);
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 400;
-  outline: none;
-  direction: rtl;
-  width: 100%;
-  transition: border-color 0.22s, box-shadow 0.22s;
-}
-.fg input::placeholder, .fg textarea::placeholder { color: rgba(148,163,184,0.35); }
-.fg input:focus, .fg textarea:focus, .select-wrap select:focus {
-  border-color: var(--blue-main);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.18);
-}
-.fg input.error, .fg textarea.error, .select-wrap.error select { border-color: #ef4444; }
-
-.select-wrap { position: relative; }
-.select-wrap::after {
-  content: '▾';
-  position: absolute;
-  top: 50%;
-  inset-inline-end: 15px;
-  transform: translateY(-50%);
-  color: var(--gray-text);
-  pointer-events: none;
-  font-size: 13px;
-}
-.select-wrap select { appearance: none; -webkit-appearance: none; cursor: pointer; }
-.fg textarea { resize: vertical; min-height: 110px; }
-
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 56px 28px;
-  background: var(--bg-card);
-  border: 1px solid rgba(59,130,246,0.32);
-  border-radius: var(--radius);
-}
-.form-success.show { display: block; }
-.success-check {
-  width: 60px;
-  height: 60px;
-  background: rgba(37,99,235,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  color: var(--blue-light);
-  margin: 0 auto 18px;
-}
-.form-success h3 { font-size: 22px; margin-bottom: 8px; }
-.form-success p  { color: var(--gray-text); font-weight: 400; }
-
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
-.footer {
-  background-color: #020509;
-  background-image: var(--grid);
-  background-size: var(--grid-sz);
-  border-top: 1px solid var(--border);
-  padding: 52px 0 0;
-}
-
-.footer-cols { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px; margin-bottom: 44px; }
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.footer-brand p { font-size: 14px; color: var(--gray-text); font-weight: 400; }
-
-.footer-links { display: flex; flex-direction: column; gap: 12px; }
-.footer-links a { font-size: 14px; color: var(--gray-text); font-weight: 500; transition: color 0.2s; }
-.footer-links a:hover { color: var(--white); }
-
-.footer-social { display: flex; gap: 10px; }
-.social-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gray-text);
-  transition: var(--trans);
-}
-.social-icon:hover { color: var(--white); border-color: var(--blue-main); background: rgba(37,99,235,0.14); }
-
-.footer-bar { border-top: 1px solid var(--border); padding: 18px 0; text-align: center; }
-.footer-bar p { font-size: 13px; color: var(--gray-text); opacity: 0.5; font-weight: 400; }
-
-/* ═══════════════════════════════════════════
-   STAGGER DELAYS
-═══════════════════════════════════════════ */
-.cards-3 .reveal:nth-child(2)      { transition-delay: 90ms; }
-.cards-3 .reveal:nth-child(3)      { transition-delay: 180ms; }
-.pricing-grid .reveal:nth-child(2) { transition-delay: 90ms; }
-.pricing-grid .reveal:nth-child(3) { transition-delay: 180ms; }
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE — TABLET ≤ 1024px
-═══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .cards-3, .pricing-grid { grid-template-columns: 1fr 1fr; }
-  .pricing-featured { transform: none; }
-  .pricing-featured:hover { transform: translateY(-5px); }
-  .process-row  { flex-wrap: wrap; gap: 28px; justify-content: center; }
-  .process-line { display: none; }
-  .process-step { flex: 0 0 calc(50% - 14px); }
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE — MOBILE ≤ 768px
-═══════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .section { padding: 56px 0; }
-  .section-title { margin-bottom: 32px; }
-
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-
-  .cards-3, .pricing-grid { grid-template-columns: 1fr; }
-  .cards-3 .reveal:nth-child(2),
-  .cards-3 .reveal:nth-child(3),
-  .pricing-grid .reveal:nth-child(2),
-  .pricing-grid .reveal:nth-child(3) { transition-delay: 0ms; }
-
-  .hero-headline { font-size: 36px; letter-spacing: -1.2px; }
-  .hero-actions  { flex-direction: column; align-items: stretch; }
-  .trust-bar     { flex-direction: column; gap: 8px; }
-  .br-desktop    { display: none; }
-
-  .process-step { flex: 0 0 100%; }
-  .usp-row      { flex-direction: column; gap: 16px; padding: 24px; }
-  .icon-row     { gap: 20px; }
-
-  .cta-checks   { flex-direction: column; gap: 8px; align-items: center; }
-  .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-  .footer-cols  { grid-template-columns: 1fr; gap: 28px; }
-}
-
-@media (max-width: 480px) {
-  .hero-headline { font-size: 32px; letter-spacing: -0.8px; }
-  .pricing-card, .service-card { padding: 24px 18px; }
-  .btn-xl  { padding: 16px 32px; font-size: 16px; }
-  .btn-lg  { padding: 14px 28px; }
+@media (max-width:480px) {
+  .hero-headline { font-size:32px; letter-spacing:-0.8px; }
+  .pricing-card,.service-card { padding:24px 18px; }
+  .btn-xl  { padding:16px 32px; font-size:16px; }
+  .btn-lg  { padding:14px 28px; }
+  .trust-items { grid-template-columns:1fr; }
+  .stats-grid  { grid-template-columns:1fr 1fr; }
 }
   </style>
 </head>
 <body>
 
-  <!-- ── SITE-WIDE SPARKLES ── -->
   <canvas id="siteSparkles" aria-hidden="true"></canvas>
 
-  <!-- ── NAVIGATION ── -->
-  <nav id="navbar">
+  <nav id="navbar" aria-label="ניווט ראשי">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo" dir="ltr">
+      <a href="#home" class="nav-logo" dir="ltr" aria-label="TomScales - עמוד הבית">
         <svg class="logo-icon" viewBox="0 0 40 30" fill="none" aria-hidden="true">
           <rect x="1" y="18" width="9" height="12" rx="1.5" fill="#1E3A8A"/>
           <rect x="13" y="12" width="9" height="18" rx="1.5" fill="#2563EB"/>
@@ -1048,754 +374,340 @@ form { display: flex; flex-direction: column; gap: 18px; }
       <ul class="nav-links">
         <li><a href="#home">בית</a></li>
         <li><a href="#services">שירותים</a></li>
-        <li><a href="#pricing">חבילות</a></li>
-        <li><a href="#why">למה אנחנו</a></li>
+        <li><a href="#pricing">מחירון</a></li>
+        <li><a href="#why">למה אני</a></li>
         <li><a href="#contact">צור קשר</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary nav-cta"><span>קבלו הצעה</span></a>
-      <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
+      <a href="#contact" class="btn btn-primary nav-cta"><span>קבל הצעה</span></a>
+      <button class="hamburger" id="hamburger" aria-label="פתח תפריט" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ── MOBILE MENU ── -->
-  <div class="mobile-overlay" id="mobileOverlay">
+  <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true">
     <button class="mobile-close" id="mobileClose" aria-label="סגור תפריט">✕</button>
     <nav class="mobile-nav">
       <ul>
         <li><a href="#home" class="mobile-link">בית</a></li>
         <li><a href="#services" class="mobile-link">שירותים</a></li>
-        <li><a href="#pricing" class="mobile-link">חבילות</a></li>
-        <li><a href="#why" class="mobile-link">למה אנחנו</a></li>
+        <li><a href="#pricing" class="mobile-link">מחירון</a></li>
+        <li><a href="#why" class="mobile-link">למה אני</a></li>
         <li><a href="#contact" class="mobile-link">צור קשר</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary mobile-link mobile-cta"><span>קבלו הצעה</span></a>
+      <a href="#contact" class="btn btn-primary mobile-link mobile-cta"><span>קבל הצעת מחיר חינם</span></a>
     </nav>
   </div>
 
-  <!-- ── HERO ── -->
   <section id="home" class="hero">
-    <div class="hero-glow"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <canvas id="heroSparkles" class="hero-sparkles" aria-hidden="true"></canvas>
-    <div class="container hero-body reveal">
+    <div class="container hero-body">
+      <div class="hero-badge">
+        <span class="badge-stars">★★★★★</span>
+        <strong>4.9/5</strong>
+        <span>על-פי 50+ לקוחות מרוצים</span>
+      </div>
       <h1 class="hero-headline">
-        האתר שלכם הוא<br>
-        <span class="text-blue">הנשק השיווקי</span><br>
-        של העסק שלכם.
+        אתר שמביא לקוחות<br>
+        <span class="text-blue">לא רק כזה שנראה טוב.</span>
       </h1>
       <p class="hero-sub">
-        TomScales בונה אתרים, דפי נחיתה ומודעות סטטיות<br class="br-desktop">
-        לעסקים קטנים שרוצים להיראות מקצועיים — ולמשוך לקוחות אמיתיים.
+        TomScales בניית אתרים ועמודי נחיתה מקצועיים שמציגים את העסק שלך<br class="br-desktop">
+        בצורה מקצועית וממירים מבקרים ללקוחות פעילים ב-999 ₪ בלבד.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary btn-lg"><span>קבלו הצעת מחיר חינם</span></a>
-        <a href="#services" class="btn btn-outline btn-lg">ראו את השירותים</a>
+        <a href="#contact" class="btn btn-primary btn-lg btn-hero-pulse"><span>קבל הצעת מחיר חינם ←</span></a>
+        <a href="#services" class="btn btn-outline btn-lg">ראה את השירותים</a>
       </div>
-      <div class="trust-bar">
-        <span><span class="check">✓</span> קוד ידני — לא תבניות</span>
-        <span><span class="check">✓</span> תשלום רק כשמרוצים</span>
-        <span><span class="check">✓</span> מותאם לנייד</span>
+      <div class="trust-bar trust-line">
+        <span><span class="check">✓</span> קוד נקי – ללא תבניות</span>
+        <span><span class="check">✓</span> תשלום רק לאחר אישורך</span>
+        <span><span class="check">✓</span> מסירה תוך 5 ימים</span>
       </div>
     </div>
-    <div class="scroll-cue"><div class="scroll-cue-arrow"></div></div>
+    <div class="scroll-cue" aria-hidden="true"><div class="scroll-cue-arrow"></div></div>
   </section>
 
-  <!-- ── SERVICES ── -->
-  <section id="services" class="section">
+  <section class="trust-section" aria-label="ערכים ובטחון">
     <div class="container">
-      <p class="section-label reveal">מה אנחנו בונים</p>
-      <h2 class="section-title reveal">שלושה שירותים. תוצאה אחת.</h2>
-      <div class="cards-3">
-
-        <div class="service-card reveal">
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>
-          </div>
-          <h3>אתר עסקי</h3>
-          <p>אתר מקצועי מקוד ידני — מהיר, מאובטח, מותאם לכל מסך. לא תבניות. לא Wix. קוד אמיתי שמביא תוצאות.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="6"/>
-              <circle cx="12" cy="12" r="2"/>
-            </svg>
-          </div>
-          <h3>דף נחיתה</h3>
-          <p>עמוד ממוקד שמסביר את העסק שלכם, בונה אמון, וגורם למבקרים להפוך ללקוחות — בלי הסחות דעת.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-              <path d="M15.54 8.46a5 5 0 010 7.07"/>
-              <path d="M19.07 4.93a10 10 0 010 14.14"/>
-            </svg>
-          </div>
-          <h3>מודעות סטטיות</h3>
-          <p>קריאייטיב חזק לפייסבוק, אינסטגרם וגוגל שעוצר את הגלילה ומניע לפעולה.</p>
-        </div>
-
+      <div class="trust-items">
+        <div class="trust-item reveal"><div class="trust-item-icon" aria-hidden="true">🛡️</div><div class="trust-item-body"><strong>תמיכה שוטפת בעדיפות ראשונה</strong><span>ללא הפתעות ועלויות נסתרות</span></div></div>
+        <div class="trust-item reveal"><div class="trust-item-icon" aria-hidden="true">⚡</div><div class="trust-item-body"><strong>מסירה תוך 5 ימים</strong><span>מהיר, מדויק, ומקצועי – תמיד במועד</span></div></div>
+        <div class="trust-item reveal"><div class="trust-item-icon" aria-hidden="true">✅</div><div class="trust-item-body"><strong>שביעות רצון מלאה</strong><span>תשלום רק לאחר אישורכם את התוצאה</span></div></div>
+        <div class="trust-item reveal"><div class="trust-item-icon" aria-hidden="true">💬</div><div class="trust-item-body"><strong>זמין 7 ימים בשבוע</strong><span>עונה בוואטסאפ עד 21:00 כל יום</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ── PRICING ── -->
+  <section id="problem" class="section">
+    <div class="container">
+      <p class="ps-label reveal">הבעיה שאנחנו פותרים</p>
+      <h2 class="ps-headline reveal">עסקים קטנים מבזבזים כסף<br>על אתרים שלא עובדים.</h2>
+      <p class="ps-sub reveal">אתם לא צריכים אתר יקר שאבוד בענן – אתם צריכים אחד שמוכר תוצאות.</p>
+      <div class="ps-grid">
+        <div class="ps-card problem reveal" data-glow><div class="ps-card-icon" aria-hidden="true">❌</div><h3>אתרים שעולים יותר ממה שמחזירים</h3><p>אתם משלמים אלפים על פיתוח שהאתר לא מחזיר את ההשקעה ולא מייצר לידים ממשיים.</p></div>
+        <div class="ps-card problem reveal" data-glow><div class="ps-card-icon" aria-hidden="true">❌</div><h3>תחזוקה יקרה של שנה שלמה</h3><p>שירותי חברות שגובות לפי שעה, תחזוקות ועלויות נסתרות – ומוסיפים לחשבון שלכם בלי שתשימו לב.</p></div>
+        <div class="ps-card problem reveal" data-glow><div class="ps-card-icon" aria-hidden="true">❌</div><h3>הצעות שמתפתחות לסכום</h3><p>הצעה של 500 ₪ הופכת ל-3,000 ₪ עם תוספות, תיקונים ועלויות שלא היו בחשבון מראש.</p></div>
+      </div>
+      <div class="ps-divider"><div class="ps-divider-label">✨ הפתרון שלנו</div></div>
+      <div class="ps-grid">
+        <div class="ps-card solution reveal" data-glow><div class="ps-card-icon" aria-hidden="true">✅</div><h3>אתר שמתוכנן להביא לקוחות</h3><p>כל עמוד מתוכנן להמיר מבקרים ללקוחות – מבנה מוכח ואסטרטגיה ברורה לפני שורת קוד ראשונה.</p></div>
+        <div class="ps-card solution reveal" data-glow><div class="ps-card-icon" aria-hidden="true">✅</div><h3>4 שלבים פשוטים, 5 ימים</h3><p>תהליך ברור: פגישה ← הצעה ← עיצוב ← השקה. ללא הפתעות, ללא עיכובים.</p></div>
+        <div class="ps-card solution reveal" data-glow><div class="ps-card-icon" aria-hidden="true">✅</div><h3>מחיר קבוע, שקוף, מהיום הראשון</h3><p>המחיר שסוכם הוא המחיר הסופי. ללא תוספות, ללא חיובים נוספים, ללא הפתעות.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <p class="section-label reveal">מה אני מציע</p>
+      <h2 class="section-title reveal">שלושה שירותים. תוצאות מוכחות.</h2>
+      <div class="cards-3">
+        <div class="service-card reveal" data-glow>
+          <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <h3>אתר עסקי - יותר לקוחות</h3>
+          <p>אתר מקצועי שמציג את העסק שלכם 24/7 ועוזר ללקוחות ליצור קשר. קוד נקי, עיצוב מותאם ומוכוון המרות – ב-999 ₪ בלבד.</p>
+        </div>
+        <div class="service-card reveal" data-glow>
+          <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h3>עמוד נחיתה - יותר מכירות</h3>
+          <p>עמוד ממוקד שסוגר עסקאות. מתוכנן להמיר מבקרים ללקוחות בשניות – ללא הסחות הדעת ועם עיצוב מותאם.</p>
+        </div>
+        <div class="service-card reveal" data-glow>
+          <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg></div>
+          <h3>פרסום ממוקד - יותר פניות</h3>
+          <p>קמפיינים בפייסבוק וגוגל שעוצרים את הגלילה – רק קהל שבאמת רוצה מה שאתם מציעים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-strip" aria-label="נתוני המלצות">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal"><div class="stat-number"><span class="count-up" data-target="50">0</span><span class="stat-suffix">+</span></div><div class="stat-label">אתרים שנבנו</div></div>
+        <div class="stat-item reveal"><div class="stat-number"><span class="count-up" data-target="4.9" data-decimal="1">0</span><span class="stat-suffix">/5</span></div><div class="stat-label">דירוג ממוצע לקוחות</div></div>
+        <div class="stat-item reveal"><div class="stat-number"><span class="count-up" data-target="5">0</span><span class="stat-suffix"> ימים</span></div><div class="stat-label">זמן מסירה ממוצע</div></div>
+        <div class="stat-item reveal"><div class="stat-number"><span class="count-up" data-target="100">0</span><span class="stat-suffix">%</span></div><div class="stat-label">שביעות רצון לקוחות</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="container">
+      <p class="section-label reveal">מה הלקוחות אומרים</p>
+      <h2 class="section-title reveal">תוצאות מוכחות. לקוחות מרוצים.</h2>
+      <div class="cards-3">
+        <div class="testi-card reveal" data-glow><div class="quote-glyph" aria-hidden="true">"</div><div class="stars" aria-label="5 כוכבים מתוך 5">★★★★★</div><p class="testi-text">"תוך שבוע השקנו אתר שהביא לי 3 פניות חדשות בשבוע הראשון. ההשקעה של 999 ₪ החזירה עצמה תוך חודש."</p><div class="testi-author"><div class="avatar" aria-hidden="true">ד</div><div><strong>דוד לוי</strong><span>קיוסק שוקולד, תל אביב</span></div></div></div>
+        <div class="testi-card reveal" data-glow><div class="quote-glyph" aria-hidden="true">"</div><div class="stars" aria-label="5 כוכבים מתוך 5">★★★★★</div><p class="testi-text">"השוויתי 5 הצעות שונות – TomScales נתן לי את הכי טוב מבחינת מחיר ואיכות. האתר נראה מקצועי לחלוטין."</p><div class="testi-author"><div class="avatar" aria-hidden="true">מ</div><div><strong>מרים כהן</strong><span>יועצת תזונה, ירושלים</span></div></div></div>
+        <div class="testi-card reveal" data-glow><div class="quote-glyph" aria-hidden="true">"</div><div class="stars" aria-label="5 כוכבים מתוך 5">★★★★★</div><p class="testi-text">"תוך 5 ימים היה לי עמוד נחיתה שהגדיל את כמות הפניות שלי ב-40%. לקוחות חדשים הגיעו גם דרך המלצות ופייסבוק."</p><div class="testi-author"><div class="avatar" aria-hidden="true">נ</div><div><strong>נועה שמיר</strong><span>מאמן כושר, חיפה</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" class="section section-alt">
     <div class="container">
-      <p class="section-label reveal">חבילות ומחירים</p>
-      <h2 class="section-title reveal">מחירים קבועים. בלי הפתעות.</h2>
-
+      <p class="section-label reveal">מחירון שקוף</p>
+      <h2 class="section-title reveal">מחירים קבועים. ללא הפתעות.</h2>
       <div class="pricing-grid">
-
-        <div class="pricing-card reveal">
-          <h3>דף נחיתה</h3>
-          <p class="pkg-desc">לעסק שצריך נוכחות מהירה וממוקדת</p>
+        <div class="pricing-card reveal" data-glow>
+          <h3>עמוד נחיתה</h3><p class="pkg-desc">לעסק שצריך עמוד ממוקד שסוגר עסקאות</p>
           <div class="pkg-price"><span class="price-num">999</span><span class="price-cur">₪</span></div>
-          <ul class="feat-list">
-            <li class="yes">דף נחיתה יחיד מקוד ידני</li>
-            <li class="yes">עיצוב מותאם מובייל</li>
-            <li class="yes">טופס יצירת קשר</li>
-            <li class="yes">אספקה תוך 5 ימי עסקים</li>
-            <li class="yes">תשלום רק כשמרוצים</li>
-            <li class="no">מספר עמודים</li>
-            <li class="no">SEO</li>
-          </ul>
-          <p class="pkg-note">* לא כולל דומיין ואחסון</p>
-          <a href="#contact" class="btn btn-outline btn-full">בחרו חבילה</a>
+          <ul class="feat-list"><li class="yes">עמוד נחיתה עם קוד נקי</li><li class="yes">עיצוב מותאם למותג</li><li class="yes">טופס יצירת קשר</li><li class="yes">עד 5 סעיפי תוכן</li><li class="yes">תשלום רק לאחר אישורכם</li><li class="no">עמודים נוספים</li><li class="no">SEO</li></ul>
+          <p class="pkg-note">* ללא עלויות אחסון ודומיין</p>
+          <a href="#contact" class="btn btn-outline btn-full">בחר חבילה</a>
         </div>
-
-        <div class="pricing-card pricing-featured reveal">
-          <div class="feat-badge">מומלץ</div>
-          <h3>אתר עסקי מלא</h3>
-          <p class="pkg-desc">לעסק שרוצה אתר מקצועי ומלא</p>
+        <div class="pricing-card pricing-featured reveal" data-glow>
+          <div class="feat-badge">פופולרי</div>
+          <h3>אתר עסקי מלא</h3><p class="pkg-desc">לעסק שרוצה אתר מקצועי עם נוכחות מלאה</p>
           <div class="pkg-price"><span class="price-num">1,499</span><span class="price-cur">₪</span></div>
-          <ul class="feat-list">
-            <li class="yes">אתר עד 5 עמודים מקוד ידני</li>
-            <li class="yes">עיצוב מותאם מובייל</li>
-            <li class="yes">טופס יצירת קשר</li>
-            <li class="yes">SEO בסיסי</li>
-            <li class="yes">גוגל אנליטיקס</li>
-            <li class="yes">אספקה תוך 10 ימי עסקים</li>
-            <li class="yes">תשלום רק כשמרוצים</li>
-            <li class="no">מודעות סטטיות</li>
-          </ul>
-          <p class="pkg-note">* לא כולל דומיין ואחסון</p>
-          <a href="#contact" class="btn btn-primary btn-full"><span>בחרו חבילה</span></a>
+          <ul class="feat-list"><li class="yes">אתר עד 5 עמודים עם קוד נקי</li><li class="yes">עיצוב מותאם למותג</li><li class="yes">טופס יצירת קשר</li><li class="yes">SEO בסיסי</li><li class="yes">חיבור גוגל אנליטיקס</li><li class="yes">עד 10 סעיפי תוכן</li><li class="yes">תשלום רק לאחר אישורכם</li><li class="no">פרסום ממוקד</li></ul>
+          <p class="pkg-note">* ללא עלויות אחסון ודומיין</p>
+          <a href="#contact" class="btn btn-primary btn-full"><span>בחר חבילה</span></a>
         </div>
-
-        <div class="pricing-card reveal">
-          <h3>מודעות סטטיות</h3>
-          <p class="pkg-desc">לעסק שרוצה תוכן שיווקי חזק</p>
+        <div class="pricing-card reveal" data-glow>
+          <h3>פרסום ממוקד</h3><p class="pkg-desc">לעסק שרוצה תוצאות מהירות עם מודעות</p>
           <div class="pkg-price"><span class="price-num">399</span><span class="price-cur">₪</span></div>
-          <ul class="feat-list">
-            <li class="yes">10 מודעות סטטיות</li>
-            <li class="yes">עיצוב בסגנון האתר שלכם</li>
-            <li class="yes">מותאם לפייסבוק, אינסטגרם וגוגל</li>
-            <li class="yes">אספקה תוך 5 ימי עסקים</li>
-            <li class="yes">תשלום רק כשמרוצים</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline btn-full" style="margin-top: auto;">בחרו חבילה</a>
+          <ul class="feat-list"><li class="yes">10 מודעות ממוקדות</li><li class="yes">עיצוב גרפי על פי העסק שלכם</li><li class="yes">חיבור לפייסבוק ולגוגל</li><li class="yes">עד 5 סעיפי תוכן</li><li class="yes">תשלום רק לאחר אישורכם</li></ul>
+          <a href="#contact" class="btn btn-outline btn-full" style="margin-top:auto;">בחר חבילה</a>
         </div>
-
       </div>
-
-      <p class="pricing-footer-note reveal">
-        לא בטוחים איזו חבילה מתאימה לכם?
-        <a href="#contact">שלחו הודעה</a> ונמצא יחד את הפתרון הנכון.
-      </p>
+      <p class="pricing-footer-note reveal">לא בטוח איזו חבילה מתאימה לך? <a href="#contact">שלח הודעה</a> ונמצא יחד את הפתרון הכי מתאים.</p>
     </div>
   </section>
 
-  <!-- ── WHY TOMSCALES ── -->
   <section id="why" class="section">
     <div class="container">
-      <p class="section-label reveal">למה אנחנו</p>
-      <h2 class="section-title reveal">שלושה יתרונות שאף אחד אחר לא נותן</h2>
-
+      <p class="section-label reveal">למה אני</p>
+      <h2 class="section-title reveal">שלושה דברים שאף מתחרה לא נותן יחד</h2>
       <div class="usp-stack">
-        <div class="usp-row reveal">
-          <div class="usp-emoji">💻</div>
-          <div class="usp-body">
-            <h3>קוד ידני בלבד — לא תבניות</h3>
-            <p>כל אתר נכתב מאפס. מהיר יותר, גמיש יותר, ייחודי לחלוטין. בלי Wix, בלי WordPress, בלי קיצורי דרך.</p>
-          </div>
-        </div>
-        <div class="usp-row reveal">
-          <div class="usp-emoji">💰</div>
-          <div class="usp-body">
-            <h3>המחיר הנמוך ביותר לאתר מקצועי</h3>
-            <p>אתר מקוד ידני, מקצועי ומהיר — החל מ-999 ₪ בלבד. לא תמצאו מחיר כזה בשוק לאיכות הזאת.</p>
-          </div>
-        </div>
-        <div class="usp-row reveal">
-          <div class="usp-emoji">✅</div>
-          <div class="usp-body">
-            <h3>תשלום רק כשמרוצים לחלוטין</h3>
-            <p>לא תשלמו שקל אחד עד שהאתר לא יהיה בדיוק כפי שרציתם. אתם מקבלים את האתר — אנחנו מקבלים את התשלום. בסדר הזה.</p>
-          </div>
-        </div>
+        <div class="usp-row reveal" data-glow><div class="usp-emoji" aria-hidden="true">💻</div><div class="usp-body"><h3>קוד נקי – ללא תבניות</h3><p>כל אתר נכתב מאפס. מהיר יותר, מאובטח יותר, מדורג גבוה יותר בגוגל. לא Wix, לא WordPress, לא קיצורי דרך.</p></div></div>
+        <div class="usp-row reveal" data-glow><div class="usp-emoji" aria-hidden="true">💰</div><div class="usp-body"><h3>מחיר שקוף ומוסכם מראש</h3><p>אתר מקצועי באמת — מ-999 ₪ בלבד. לא תמצא תמורה שווה יותר במחיר הזה.</p></div></div>
+        <div class="usp-row reveal" data-glow><div class="usp-emoji" aria-hidden="true">✅</div><div class="usp-body"><h3>תשלום רק לאחר אישורכם לגמרי</h3><p>לא תשלמו שקל לפני שאישרתם שאתם מרוצים ב-100%. אתם מקבלים את האתר — אחר כך מגיע התשלום. פשוט כך.</p></div></div>
       </div>
-
       <div class="icon-row reveal">
-        <div class="icon-tile"><span>⚡</span><p>אספקה מהירה</p></div>
-        <div class="icon-tile"><span>📱</span><p>מותאם מובייל</p></div>
-        <div class="icon-tile"><span>🔒</span><p>קוד נקי ומאובטח</p></div>
-        <div class="icon-tile"><span>🚀</span><p>ממוקד בתוצאות</p></div>
+        <div class="icon-tile"><span aria-hidden="true">⚡</span><p>מסירה מהירה</p></div>
+        <div class="icon-tile"><span aria-hidden="true">📱</span><p>מותאם למובייל</p></div>
+        <div class="icon-tile"><span aria-hidden="true">🔒</span><p>קוד מאובטח</p></div>
+        <div class="icon-tile"><span aria-hidden="true">📈</span><p>מוכוון תוצאות</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ── PROCESS ── -->
   <section id="process" class="section section-alt">
     <div class="container">
       <p class="section-label reveal">איך זה עובד</p>
-      <h2 class="section-title reveal">מהשיחה הראשונה ועד ההשקה</h2>
+      <h2 class="section-title reveal">ארבעה שלבים – מהשיחה הראשונה ועד העלאה לאוויר</h2>
       <div class="process-row">
-        <div class="process-step reveal">
-          <div class="step-num">1</div>
-          <h3>שיחת היכרות</h3>
-          <p>מבינים את העסק שלכם, המטרות שלכם, ומה אתם רוצים להשיג.</p>
-        </div>
-        <div class="process-line"></div>
-        <div class="process-step reveal">
-          <div class="step-num">2</div>
-          <h3>הצעת מחיר</h3>
-          <p>תוך 24 שעות תקבלו הצעה מפורטת וברורה — ללא הפתעות.</p>
-        </div>
-        <div class="process-line"></div>
-        <div class="process-step reveal">
-          <div class="step-num">3</div>
-          <h3>בנייה ועדכונים</h3>
-          <p>בונים, מציגים, מקבלים פידבק. אתם מעורבים בכל שלב.</p>
-        </div>
-        <div class="process-line"></div>
-        <div class="process-step reveal">
-          <div class="step-num">4</div>
-          <h3>תשלום והשקה</h3>
-          <p>רק כשמרוצים לחלוטין — תשלמו ותקבלו את האתר המוכן.</p>
-        </div>
+        <div class="process-step reveal"><div class="step-num">1</div><h3>שיחת פגישה</h3><p>מבינים את העסק שלכם, המטרות שלכם, ומה אתם רוצים להשיג.</p></div>
+        <div class="process-line" aria-hidden="true"></div>
+        <div class="process-step reveal"><div class="step-num">2</div><h3>הצעת מחיר</h3><p>תוך 24 שעות תקבלו הצעה מפורטת ושקופה – ללא הפתעות.</p></div>
+        <div class="process-line" aria-hidden="true"></div>
+        <div class="process-step reveal"><div class="step-num">3</div><h3>בניה ועיצוב</h3><p>כותבים, מעצבים, ומתקדמים. אתם מעורבים בכל שלב שרציתם.</p></div>
+        <div class="process-line" aria-hidden="true"></div>
+        <div class="process-step reveal"><div class="step-num">4</div><h3>תשלום ואישור</h3><p>רק לאחר אישורך המלא — תשלום, ואנחנו מעלים את האתר לאוויר.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ── TESTIMONIALS ── -->
-  <section id="testimonials" class="section">
-    <div class="container">
-      <p class="section-label reveal">מה אומרים הלקוחות</p>
-      <h2 class="section-title reveal">תוצאות אמיתיות. לקוחות מרוצים.</h2>
-      <div class="cards-3">
-
-        <div class="testi-card reveal">
-          <div class="quote-glyph">"</div>
-          <div class="stars">★★★★★</div>
-          <p class="testi-text">"קיבלנו אתר מקצועי שנראה כמו של חברה גדולה, במחיר שלא האמנו שאפשרי. מרוצים לחלוטין."</p>
-          <div class="testi-author">
-            <div class="avatar">ד</div>
-            <div><strong>דוד כהן</strong><span>בעל עסק לשיפוצים</span></div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="quote-glyph">"</div>
-          <div class="stars">★★★★★</div>
-          <p class="testi-text">"תוך 5 ימים היה לנו דף נחיתה שמביא לנו פניות כל יום. השירות מקצועי והתוצאה מדהימה."</p>
-          <div class="testi-author">
-            <div class="avatar">מ</div>
-            <div><strong>מיכל לוי</strong><span>סטודיו לאירועים</span></div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="quote-glyph">"</div>
-          <div class="stars">★★★★★</div>
-          <p class="testi-text">"מה שהכי אהבנו — לא שילמנו כלום עד שהיינו מרוצים ב-100%. ככה עושים עסקים."</p>
-          <div class="testi-author">
-            <div class="avatar">א</div>
-            <div><strong>אלון אברהם</strong><span>קליניקת שיניים</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FAQ ── -->
-  <section id="faq" class="section section-alt">
-    <div class="container container-narrow">
-      <h2 class="section-title reveal">שאלות נפוצות</h2>
+  <section id="faq" class="section">
+    <div class="container-narrow">
+      <p class="section-label text-center reveal">שאלות נפוצות</p>
+      <h2 class="section-title text-center reveal">כל הספקות — נפתרים כאן</h2>
       <div class="faq-list">
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>כמה זמן לוקח לבנות אתר?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>תלוי בחבילה שבחרתם — בין 5 ל-10 ימי עסקים. הזמן המדויק מוגדר לפני תחילת העבודה.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>האם האתר מותאם לטלפון נייד?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>כן, תמיד. כל אתר נכתב מאפס ומותאם במלואו למובייל, טאבלט ודסקטופ.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>האם אתם מקבלים את קוד המקור?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>בהחלט. בסיום הפרויקט תקבלו את כל הקבצים ותהיו הבעלים המלאים של האתר.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>מה קורה אם לא מרוצים?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>פשוט — לא תשלמו. אנחנו עובדים עד שתהיו מרוצים לחלוטין. רק לאחר אישורכם תתבצע העברת התשלום והאתר עובר לידיכם.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>האם יש עלויות נסתרות?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>לא. המחיר שסוכם הוא המחיר הסופי. האתר לא כולל דומיין ואחסון (כ-50–100 ₪ בשנה בנפרד), מה שמצוין מראש.</p></div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-q"><span>מה ההבדל בין דף נחיתה לאתר עסקי?</span><span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>דף נחיתה הוא עמוד יחיד ממוקד בפעולה אחת (כמו השארת פרטים). אתר עסקי כולל מספר עמודים — בית, שירותים, אודות, צור קשר ועוד.</p></div>
-        </div>
-
+        <div class="faq-item open reveal" data-glow><button class="faq-q" aria-expanded="true"><span>כמה זמן לוקח לבנות את האתר?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>תלוי בחבילה שבחרתם – בין 5 ל-10 ימי עסקים. עמוד נחיתה בדרך כלל תוך 5 ימים. אתר עם כמה עמודים קצת יותר.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>האם האתר מותאם לטלפונים?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>כן, תמיד. כל אתר הוא Mobile-First – נבנה קודם כתואם בטלפונים, ולאחר מכן למחשב.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>מה קורה אם לא אהיה מרוצה מהתוצאה?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>נעבוד יחד על שינויים שרציתם – ללא הגבלה על מספר תיקונים. ללא תוספת כספית. עד שתהיו מרוצים.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>מה עלות האחסון לאתר?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>עלויות אחסון אינן כלולות – בדרך 200-300₪ לשנה. יש אפשרות לרכישה ללא דומיין ורכישה עצמאית, או רכישת דומיין דרכנו בתוספת של 200₪ לשנה.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>האם אפשר לעשות שינויים לאחר העלת האתר/דף נחיתה?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>כן, בוודאי. שינויים קטנים הם חינמים (כגון שינוי טקסט קצר או תמונה).</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>מה ההבדל בין אתר עסקי ועמוד נחיתה?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>דף נחיתה - עמוד אחד שממוקד בהבאת פניות ולקוחות | אתר - כמה עמודים שמציגים את העסק, השירותים והמותג בצורה מלאה.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>האם אני צריך לספק תוכן לפגישה?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>לא בהכרח, רק תצטרכו לענות על כמה שאלות ממוקדות ומשם הבנייה באחריותנו.</p></div></div>
+        <div class="faq-item reveal" data-glow><button class="faq-q" aria-expanded="false"><span>מה אם אני עדיין לא בטוח מה אני צריך?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-a"><p>שלחו הודעה – נקבע שיחה קצרה ונבין ביחד איזו תוכנית הכי מתאימה לעסק שלכם.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ── -->
   <section id="cta" class="section cta-section">
-    <div class="cta-glow"></div>
+    <div class="cta-glow" aria-hidden="true"></div>
     <div class="container text-center reveal">
-      <h2 class="cta-headline">
-        מוכנים שהעסק שלכם<br>
-        <span class="text-blue">יראה כמו שמגיע לו?</span>
-      </h2>
-      <p class="cta-sub">קבלו הצעת מחיר חינם תוך 24 שעות. ללא התחייבות.</p>
-      <a href="#contact" class="btn btn-primary btn-xl"><span>בואו נדבר →</span></a>
+      <h2 class="cta-headline">מוכן שהעסק שלך<br><span class="text-blue">ייראה כמו שמגיע לו?</span></h2>
+      <p class="cta-sub">שיחה של 2 דקות בלבד – קבלו הצעת מחיר חינם תוך 24 שעות.</p>
+      <a href="#contact" class="btn btn-primary btn-xl"><span>התחל עכשיו – זה בחינם ←</span></a>
+      <p class="cta-microcopy">זמן ממוצע למענה: עד 4 שעות בשעות פעילות</p>
       <div class="cta-checks">
-        <span><span class="check">✓</span> תשלום רק כשמרוצים</span>
+        <span><span class="check">✓</span> תשלום רק לאחר אישורך</span>
         <span><span class="check">✓</span> ללא עלויות נסתרות</span>
         <span><span class="check">✓</span> מענה תוך 24 שעות</span>
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
   <section id="contact" class="section section-alt">
     <div class="container">
-      <h2 class="section-title reveal">צרו קשר</h2>
+      <h2 class="section-title reveal">צור קשר</h2>
       <div class="contact-grid">
-
         <div class="contact-info reveal">
-          <p class="contact-intro">מגיבים תוך 24 שעות בכל דרך שנוחה לכם.</p>
-          <a href="https://wa.me/972556692989" class="btn-wa" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            שלחו הודעה בוואטסאפ ←
+          <p class="contact-intro">נחזור אליכם תוך 24 שעות.</p>
+          <a href="https://wa.me/972556692989" class="btn-wa" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה בוואטסאפ">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            שלח הודעה בוואטסאפ ←
           </a>
           <div class="contact-details">
-            <div class="cd-row">
-              <span class="cd-label">אימייל</span>
-              <a href="mailto:tomscales.web.builder@gmail.com">tomscales.web.builder@gmail.com</a>
-            </div>
-            <div class="cd-row">
-              <span class="cd-label">שעות פעילות</span>
-              <span>זמינים א׳–ו׳, 09:00–21:00</span>
-            </div>
+            <div class="cd-row"><span class="cd-label">אימייל</span><a href="mailto:tomscales.web.builder@gmail.com">tomscales.web.builder@gmail.com</a></div>
+            <div class="cd-row"><span class="cd-label">שעות פעילות</span><span>ראשון עד שישי, 09:00–21:00</span></div>
           </div>
         </div>
-
         <div class="contact-form-wrap reveal">
-          <form id="contactForm" novalidate>
-            <div class="fg">
-              <label for="name">שם מלא</label>
-              <input type="text" id="name" name="name" placeholder="ישראל ישראלי" required>
-            </div>
-            <div class="fg">
-              <label for="phone">מספר טלפון</label>
-              <input type="tel" id="phone" name="phone" placeholder="050-0000000" required>
-            </div>
-            <div class="fg">
-              <label for="email">כתובת אימייל</label>
-              <input type="email" id="email" name="email" placeholder="israel@example.com" required>
-            </div>
-            <div class="fg">
-              <label for="service">סוג השירות</label>
-              <div class="select-wrap">
-                <select id="service" name="service">
-                  <option value="">בחרו שירות</option>
-                  <option value="website">אתר עסקי</option>
-                  <option value="landing">דף נחיתה</option>
-                  <option value="ads">מודעות סטטיות</option>
-                </select>
-              </div>
-            </div>
-            <div class="fg">
-              <label for="message">תיאור קצר של הפרויקט</label>
-              <textarea id="message" name="message" rows="4" placeholder="ספרו לנו על העסק שלכם..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full"><span>שלחו הודעה →</span></button>
+          <form id="contactForm" novalidate aria-label="טופס יצירת קשר">
+            <div class="fg"><label for="name">שם מלא</label><input type="text" id="name" name="name" placeholder="ישראל ישראלי" required autocomplete="name"></div>
+            <div class="fg"><label for="phone">מספר טלפון</label><input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel"></div>
+            <div class="fg"><label for="email">כתובת אימייל</label><input type="email" id="email" name="email" placeholder="israel@example.com" required autocomplete="email"></div>
+            <div class="fg"><label for="service">סוג השירות</label><div class="select-wrap"><select id="service" name="service"><option value="">בחר שירות</option><option value="website">אתר עסקי</option><option value="landing">עמוד נחיתה</option><option value="ads">פרסום ממוקד</option></select></div></div>
+            <div class="fg"><label for="message">תיאור קצר של הפרויקט</label><textarea id="message" name="message" rows="4" placeholder="ספרו לנו קצת על העסק שלכם..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full"><span>שלח הודעה ←</span></button>
           </form>
-          <div class="form-success" id="formSuccess">
-            <div class="success-check">✓</div>
-            <h3>קיבלנו את הפנייה שלכם!</h3>
-            <p>נחזור אליכם תוך 24 שעות.</p>
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <div class="success-check" aria-hidden="true">✓</div>
+            <h3>קיבלנו את הפנייה שלך!</h3>
+            <p>נחזור אליך תוך 24 שעות.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="container">
       <div class="footer-cols">
         <div class="footer-brand">
           <div class="footer-logo" dir="ltr">
-            <svg class="logo-icon" viewBox="0 0 40 30" fill="none" aria-hidden="true">
-              <rect x="1" y="18" width="9" height="12" rx="1.5" fill="#1E3A8A"/>
-              <rect x="13" y="12" width="9" height="18" rx="1.5" fill="#2563EB"/>
-              <rect x="25" y="5" width="9" height="25" rx="1.5" fill="#3B82F6"/>
-              <polyline points="5.5,17 17.5,11 29.5,4" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="5.5" cy="17" r="2.2" fill="#93C5FD"/>
-              <circle cx="17.5" cy="11" r="2.2" fill="#93C5FD"/>
-              <circle cx="29.5" cy="4" r="2.2" fill="#93C5FD"/>
-            </svg>
+            <svg class="logo-icon" viewBox="0 0 40 30" fill="none" aria-hidden="true"><rect x="1" y="18" width="9" height="12" rx="1.5" fill="#1E3A8A"/><rect x="13" y="12" width="9" height="18" rx="1.5" fill="#2563EB"/><rect x="25" y="5" width="9" height="25" rx="1.5" fill="#3B82F6"/><polyline points="5.5,17 17.5,11 29.5,4" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="17" r="2.2" fill="#93C5FD"/><circle cx="17.5" cy="11" r="2.2" fill="#93C5FD"/><circle cx="29.5" cy="4" r="2.2" fill="#93C5FD"/></svg>
             <div class="logo-sep"></div>
             <span class="logo-name"><span class="logo-tom">Tom</span><span class="logo-scales">Scales</span></span>
           </div>
-          <p>בונים אתרים שעובדים.</p>
+          <p>בניית אתרים מקצועית שמוכרת.</p>
         </div>
-        <nav class="footer-links">
-          <a href="#home">בית</a>
-          <a href="#services">שירותים</a>
-          <a href="#pricing">חבילות</a>
-          <a href="#contact">צור קשר</a>
+        <nav class="footer-links" aria-label="קישורי Footer">
+          <a href="#home">בית</a><a href="#services">שירותים</a><a href="#pricing">מחירון</a><a href="#faq">שאלות נפוצות</a><a href="#contact">צור קשר</a>
         </nav>
         <div class="footer-social">
-          <a href="#" class="social-icon" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <a href="#" class="social-icon" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
-              <rect x="2" y="2" width="20" height="20" rx="4"/>
-              <line x1="8" y1="10" x2="8" y2="17"/>
-              <circle cx="8" cy="7" r="0.5" fill="currentColor" stroke="none"/>
-              <path d="M12 10v7M12 14a3 3 0 016 0v3"/>
-            </svg>
-          </a>
+          <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="7" r="0.5" fill="currentColor" stroke="none"/><path d="M12 10v7M12 14a3 3 0 016 0v3"/></svg></a>
         </div>
       </div>
-      <div class="footer-bar">
-        <p>© 2025 TomScales — כל הזכויות שמורות</p>
-      </div>
+      <div class="footer-bar"><p>© <span id="year"></span> TomScales – כל הזכויות שמורות</p></div>
     </div>
   </footer>
 
   <script>
 'use strict';
+const navbar=document.getElementById('navbar'),hamburger=document.getElementById('hamburger'),mobileOverlay=document.getElementById('mobileOverlay'),mobileClose=document.getElementById('mobileClose'),mobileLinks=document.querySelectorAll('.mobile-link'),contactForm=document.getElementById('contactForm'),formSuccess=document.getElementById('formSuccess'),faqItems=document.querySelectorAll('.faq-item'),revealEls=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+const revObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>revObs.observe(el));
+function openMenu(){mobileOverlay.classList.add('open');document.body.style.overflow='hidden';hamburger.setAttribute('aria-expanded','true');}
+function closeMenu(){mobileOverlay.classList.remove('open');document.body.style.overflow='';hamburger.setAttribute('aria-expanded','false');}
+hamburger.addEventListener('click',openMenu);mobileClose.addEventListener('click',closeMenu);
+mobileLinks.forEach(l=>l.addEventListener('click',closeMenu));
+mobileOverlay.addEventListener('click',e=>{if(e.target===mobileOverlay)closeMenu();});
+faqItems.forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const o=item.classList.contains('open');faqItems.forEach(i=>i.classList.remove('open'));if(!o)item.classList.add('open');});});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'});});});
+function isValidEmail(v){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+function isValidPhone(v){return/^[\d\s\-+()]{7,}$/.test(v);}
+function setError(f,h){const w=f.closest('.fg')||f.parentElement;if(h){f.classList.add('error');if(w&&w.classList.contains('select-wrap'))w.classList.add('error');}else{f.classList.remove('error');if(w&&w.classList.contains('select-wrap'))w.classList.remove('error');}}
+contactForm.addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name'),p=document.getElementById('phone'),em=document.getElementById('email'),m=document.getElementById('message');let v=true;
+if(!n.value.trim()||n.value.trim().length<2){setError(n,true);v=false;}else setError(n,false);
+if(!isValidPhone(p.value)){setError(p,true);v=false;}else setError(p,false);
+if(!isValidEmail(em.value)){setError(em,true);v=false;}else setError(em,false);
+if(!m.value.trim()||m.value.trim().length<5){setError(m,true);v=false;}else setError(m,false);
+if(!v){const fe=contactForm.querySelector('.error');if(fe)window.scrollTo({top:fe.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'});return;}
+contactForm.style.display='none';formSuccess.classList.add('show');});
+['name','phone','email','message'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',()=>setError(el,false));});
 
-/* ─── DOM REFS ─── */
-const navbar       = document.getElementById('navbar');
-const hamburger    = document.getElementById('hamburger');
-const mobileOverlay = document.getElementById('mobileOverlay');
-const mobileClose  = document.getElementById('mobileClose');
-const mobileLinks  = document.querySelectorAll('.mobile-link');
-const contactForm  = document.getElementById('contactForm');
-const formSuccess  = document.getElementById('formSuccess');
-const faqItems     = document.querySelectorAll('.faq-item');
-const revealEls    = document.querySelectorAll('.reveal');
+(function(){const c=document.getElementById('heroSparkles');if(!c)return;const ctx=c.getContext('2d');let P=[],raf;function rs(){const r=c.parentElement.getBoundingClientRect();c.width=r.width||innerWidth;c.height=r.height||innerHeight;}
+class Par{constructor(r){this.reset(r);}reset(r){this.x=Math.random()*c.width;this.y=r!==undefined?Math.random()*c.height:Math.random()*c.height;this.r=Math.random()*0.9+0.4;this.vx=(Math.random()-0.5)*0.22;this.vy=(Math.random()-0.5)*0.22;this.o=Math.random();this.to=Math.random();this.fs=Math.random()*0.012+0.004;}
+update(){this.x+=this.vx;this.y+=this.vy;const d=this.to-this.o;if(Math.abs(d)<0.02)this.to=Math.random();this.o+=d*this.fs*3;if(this.x<-2)this.x=c.width+2;if(this.x>c.width+2)this.x=-2;if(this.y<-2)this.y=c.height+2;if(this.y>c.height+2)this.y=-2;}
+draw(){ctx.save();ctx.globalAlpha=Math.max(0.04,Math.min(1,this.o));ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();ctx.restore();}}
+function build(){P=[];for(let i=0;i<180;i++)P.push(new Par(true));}
+function tick(){ctx.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.update();p.draw();});raf=requestAnimationFrame(tick);}
+rs();build();tick();
+window.addEventListener('resize',()=>{cancelAnimationFrame(raf);rs();build();tick();},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else tick();});})();
 
-/* ─── NAVBAR SCROLL ─── */
-function onScroll() {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-}
-window.addEventListener('scroll', onScroll, { passive: true });
+(function(){const c=document.getElementById('siteSparkles');if(!c)return;const ctx=c.getContext('2d');let P=[],raf;function rs(){c.width=innerWidth;c.height=innerHeight;}
+class Par{constructor(){this.reset();}reset(){this.x=Math.random()*c.width;this.y=Math.random()*c.height;this.r=Math.random()*0.65+0.25;this.vx=(Math.random()-0.5)*0.14;this.vy=(Math.random()-0.5)*0.14;this.o=Math.random();this.to=Math.random();this.fs=Math.random()*0.010+0.003;}
+update(){this.x+=this.vx;this.y+=this.vy;const d=this.to-this.o;if(Math.abs(d)<0.02)this.to=Math.random();this.o+=d*this.fs*3;if(this.x<-2)this.x=c.width+2;if(this.x>c.width+2)this.x=-2;if(this.y<-2)this.y=c.height+2;if(this.y>c.height+2)this.y=-2;}
+draw(){ctx.save();ctx.globalAlpha=Math.max(0.02,Math.min(0.88,this.o));ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();ctx.restore();}}
+function build(){P=[];for(let i=0;i<260;i++)P.push(new Par());}
+function tick(){ctx.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.update();p.draw();});raf=requestAnimationFrame(tick);}
+rs();build();tick();
+window.addEventListener('resize',()=>{cancelAnimationFrame(raf);rs();build();tick();},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else tick();});})();
 
-/* ─── REVEAL ON SCROLL (Intersection Observer) ─── */
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+(function(){document.addEventListener('pointermove',function(e){var x=e.clientX,y=e.clientY,xp=x/innerWidth,hue=(215+xp*30).toFixed(1);document.querySelectorAll('[data-glow]').forEach(function(el){var r=el.getBoundingClientRect(),relX=(x-r.left).toFixed(2),relY=(y-r.top).toFixed(2);el.style.setProperty('--x',relX);el.style.setProperty('--y',relY);el.style.setProperty('--xp',xp.toFixed(2));el.style.backgroundImage='radial-gradient(100px 90px at '+relX+'px '+relY+'px, hsl('+hue+' 100% 60% / 0.08), transparent)';});});})();
 
-revealEls.forEach((el) => revealObserver.observe(el));
-
-/* ─── MOBILE MENU ─── */
-function openMenu() {
-  mobileOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  hamburger.setAttribute('aria-expanded', 'true');
-}
-
-function closeMenu() {
-  mobileOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-  hamburger.setAttribute('aria-expanded', 'false');
-}
-
-hamburger.addEventListener('click', openMenu);
-mobileClose.addEventListener('click', closeMenu);
-
-mobileLinks.forEach((link) => {
-  link.addEventListener('click', closeMenu);
-});
-
-/* Close on outside click */
-mobileOverlay.addEventListener('click', (e) => {
-  if (e.target === mobileOverlay) closeMenu();
-});
-
-/* ─── FAQ ACCORDION ─── */
-faqItems.forEach((item) => {
-  const btn = item.querySelector('.faq-q');
-  btn.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    faqItems.forEach((i) => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-
-/* ─── SMOOTH SCROLL for anchor links ─── */
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 72;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
-
-/* ─── CONTACT FORM VALIDATION ─── */
-function isValidEmail(v) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-}
-
-function isValidPhone(v) {
-  return /^[\d\s\-+()]{7,}$/.test(v);
-}
-
-function setError(field, hasError) {
-  const wrap = field.closest('.fg') || field.parentElement;
-  if (hasError) {
-    field.classList.add('error');
-    if (wrap && wrap.classList.contains('select-wrap')) wrap.classList.add('error');
-  } else {
-    field.classList.remove('error');
-    if (wrap && wrap.classList.contains('select-wrap')) wrap.classList.remove('error');
-  }
-}
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name    = document.getElementById('name');
-  const phone   = document.getElementById('phone');
-  const email   = document.getElementById('email');
-  const message = document.getElementById('message');
-
-  let valid = true;
-
-  if (!name.value.trim() || name.value.trim().length < 2) {
-    setError(name, true); valid = false;
-  } else { setError(name, false); }
-
-  if (!isValidPhone(phone.value)) {
-    setError(phone, true); valid = false;
-  } else { setError(phone, false); }
-
-  if (!isValidEmail(email.value)) {
-    setError(email, true); valid = false;
-  } else { setError(email, false); }
-
-  if (!message.value.trim() || message.value.trim().length < 5) {
-    setError(message, true); valid = false;
-  } else { setError(message, false); }
-
-  if (!valid) {
-    const firstErr = contactForm.querySelector('.error');
-    if (firstErr) {
-      const top = firstErr.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-    return;
-  }
-
-  contactForm.style.display = 'none';
-  formSuccess.classList.add('show');
-});
-
-/* Clear error on input */
-['name', 'phone', 'email', 'message'].forEach((id) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.addEventListener('input', () => setError(el, false));
-});
-
-/* ─── HERO SPARKLES (Canvas particle engine) ─── */
-(function initSparkles() {
-  const canvas = document.getElementById('heroSparkles');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  const COUNT = 180;
-  let particles = [];
-  let raf;
-
-  function resize() {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    canvas.width  = rect.width  || window.innerWidth;
-    canvas.height = rect.height || window.innerHeight;
-  }
-
-  class Particle {
-    constructor(randomY) { this.reset(randomY); }
-    reset(randomY) {
-      this.x  = Math.random() * canvas.width;
-      this.y  = randomY !== undefined ? Math.random() * canvas.height : Math.random() * canvas.height;
-      this.r  = Math.random() * 0.9 + 0.4;
-      this.vx = (Math.random() - 0.5) * 0.22;
-      this.vy = (Math.random() - 0.5) * 0.22;
-      this.opacity       = Math.random();
-      this.targetOpacity = Math.random();
-      this.fadeSpeed     = Math.random() * 0.012 + 0.004;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      const diff = this.targetOpacity - this.opacity;
-      if (Math.abs(diff) < 0.02) this.targetOpacity = Math.random();
-      this.opacity += diff * this.fadeSpeed * 3;
-      if (this.x < -2) this.x = canvas.width  + 2;
-      if (this.x > canvas.width  + 2) this.x = -2;
-      if (this.y < -2) this.y = canvas.height + 2;
-      if (this.y > canvas.height + 2) this.y = -2;
-    }
-    draw() {
-      const op = Math.max(0.04, Math.min(1, this.opacity));
-      ctx.save();
-      ctx.globalAlpha = op;
-      ctx.fillStyle   = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  function build() {
-    particles = [];
-    for (let i = 0; i < COUNT; i++) particles.push(new Particle(true));
-  }
-
-  function tick() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    raf = requestAnimationFrame(tick);
-  }
-
-  resize(); build(); tick();
-
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(raf); resize(); build(); tick();
-  }, { passive: true });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { cancelAnimationFrame(raf); } else { tick(); }
-  });
-})();
-
-/* ─── SITE-WIDE SPARKLES (fixed full-page layer, mix-blend-mode: screen) ─── */
-(function initSiteSparkles() {
-  const canvas = document.getElementById('siteSparkles');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  const COUNT = 260;
-  let particles = [];
-  let raf;
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x  = Math.random() * canvas.width;
-      this.y  = Math.random() * canvas.height;
-      this.r  = Math.random() * 0.65 + 0.25;
-      this.vx = (Math.random() - 0.5) * 0.14;
-      this.vy = (Math.random() - 0.5) * 0.14;
-      this.opacity       = Math.random();
-      this.targetOpacity = Math.random();
-      this.fadeSpeed     = Math.random() * 0.010 + 0.003;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      const diff = this.targetOpacity - this.opacity;
-      if (Math.abs(diff) < 0.02) this.targetOpacity = Math.random();
-      this.opacity += diff * this.fadeSpeed * 3;
-      if (this.x < -2) this.x = canvas.width  + 2;
-      if (this.x > canvas.width  + 2) this.x = -2;
-      if (this.y < -2) this.y = canvas.height + 2;
-      if (this.y > canvas.height + 2) this.y = -2;
-    }
-    draw() {
-      const op = Math.max(0.02, Math.min(0.88, this.opacity));
-      ctx.save();
-      ctx.globalAlpha = op;
-      ctx.fillStyle   = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  function build() {
-    particles = [];
-    for (let i = 0; i < COUNT; i++) particles.push(new Particle());
-  }
-
-  function tick() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    raf = requestAnimationFrame(tick);
-  }
-
-  resize(); build(); tick();
-
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(raf); resize(); build(); tick();
-  }, { passive: true });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { cancelAnimationFrame(raf); } else { tick(); }
-  });
-})();
+(function(){const obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=parseFloat(el.dataset.target),dec=parseInt(el.dataset.decimal||'0'),inc=t/(1800/16),cur=0;var ti=setInterval(function(){cur+=inc;if(cur>=t){cur=t;clearInterval(ti);}el.textContent=dec>0?cur.toFixed(dec):Math.floor(cur).toString();},16);obs.unobserve(el);});},{threshold:0.3});document.querySelectorAll('.count-up').forEach(el=>obs.observe(el));var yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFullYear();})();
   </script>
 </body>
 </html>
